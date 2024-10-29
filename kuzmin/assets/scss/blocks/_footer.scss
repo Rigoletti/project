@@ -1,0 +1,157 @@
+.footer {
+  font-size: 24px;
+
+  button {
+    width: 200px;
+    height: 50px;
+  }
+
+  input {
+    height: 50px;
+    width: 400px;
+    padding: 0 15px; // Добавьте горизонтальные отступы
+    font-size: 16px; // Убедитесь, что размер шрифта подходит для вашего дизайна
+
+    &::placeholder {
+      color: #999; // Цвет для placeholder (можно изменить)
+      opacity: 1; // Убедитесь, что opacity равен 1, чтобы placeholder был виден
+      padding-left: 10px; // Добавьте отступ для placeholder, если нужно
+    }
+  }
+
+  .btn {
+    border: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    background-color: #222;
+    padding: 17px 60px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
+  }
+
+  .btn span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    background: #78c7d2;
+    transition: all 0.5s ease-in-out;
+    transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  }
+
+  .btn:hover:after {
+    transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  }
+
+  .link {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .link a {
+    color: #000;
+    font-size: 25px;
+  }
+
+  .zakaz_zvonka {
+    background-color: #91B5E3;
+    color: white;
+    width: 1012px;
+    height: 93px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+  }
+
+  .input-button {
+    display: flex;
+    align-items: center; 
+    gap: 15px; 
+  }
+  
+  .number {
+    margin-left: 12px;
+  }
+  
+  .title {
+    margin-top: 15px;
+  }
+  
+  .wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .link_wrapper {
+    position: relative;
+  }
+  
+  a {
+    display: block;
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    background: #333;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 3px solid #333;
+    transition: all .35s;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    position: absolute;
+    transform: rotate(45deg);
+    right: 0;
+    top: 0;
+    z-index: -1;
+    transition: all .35s;
+  }
+  
+  .icon svg {
+    width: 30px;
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    transform: rotate(-45deg);
+    fill: #2ecc71;
+    transition: all .35s;
+  }
+  
+  a:hover {
+    width: 200px;
+    border: 3px solid #2ecc71;
+    background: transparent;
+    color: #2ecc71;
+  }
+  
+  a:hover + .icon {
+    border: 3px solid #2ecc71;
+    right: -25%;
+  }
+}
