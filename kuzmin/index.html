@@ -40,8 +40,8 @@
         <nav class="navigation">
           <a href="">Главная</a>
           <a href="">Каталог</a>
-          <a href="">Контакты</a>
-          <a href="">Личный кабинет</a>
+          <a href="./assets/pages/contact.html">Контакты</a>
+          <a href="./assets/pages/lichniy.cabinet.html">Личный кабинет</a>
         </nav>
         <div class="burger" id="burger">
           <i class="fas fa-bars"></i> 
@@ -149,9 +149,6 @@
                     </div>
                 </div>
             </div>
-
-
-           
             <div class="item">
                 <div class="card shadow-sm">
                     <img src="./assets/img/card_img3.png" width="100%" height="225px" />
@@ -199,105 +196,117 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script>
-      $(document).ready(function(){
-          $(".owl-carousel").owlCarousel({
-              items: 3,
-              loop: true,
-              margin: 10,
-              nav: true, 
-              dots: false 
-          });
-      });
+     $(document).ready(function(){
+    $(".owl-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1 
+            },
+            768: {
+                items: 2 
+            },
+            992: {
+                items: 3 
+            }
+        }
+    });
+});
   </script>
-       
     </main>
 <!-- footer -->
 <footer class="footer">
   <div class="container"> 
-    <div class="zakaz_zvonka">
-      <div class="input-button">
-        <div class="title">
-          <h4>ЗАКАЗАТЬ ЗВОНОК</h4>
-        </div>
-        <input type="tel" placeholder="+7 123 343 27 24" class="number">
-        <div class="button_container">
-          <button class="btn"><span>ЗАКАЗАТЬ</span></button>
-        </div>
+      <div class="zakaz_zvonka">
+          <div class="input-button">
+              <div class="title">
+                  <h4>ЗАКАЗАТЬ ЗВОНОК</h4>
+              </div>
+              <input type="tel" placeholder="+7 123 343 27 24" class="number">
+              <div class="button_container">
+                  <button class="btn"><span>ЗАКАЗАТЬ</span></button>
+              </div>
+          </div>
       </div>
-    </div>
   </div>
 
   <div class="container">
-    <div class="companiya">
-      <div class="zag">О компании</div>
-      <div class="line"></div>
-      <div class="text fs-6">
-        <p>Добро пожаловать в RHotel — ваш идеальный уголок для отдыха и восстановления сил.</p>
-        <p>Мы расположены в живописном месте в центре Дубая, где природа и комфорт сливаются воедино, создавая уникальную атмосферу для наших гостей.</p>
+      <div class="companiya">
+          <div class="zag">О компании</div>
+          <div class="line"></div>
+          <div class="text fs-6">
+            <p>Добро пожаловать в RHotel — ваше идеальное место для незабываемого отдыха и восстановления сил.</p>
+            <p>Мы находимся в сердце Москвы, где уют и современный комфорт гармонично сочетаются с атмосферой городской жизни, создавая уникальные условия для наших гостей.</p>
+          </div>
       </div>
-    </div>
 
-    <div class="top_predlojeniya">
-      <div class="zag">Горячее</div>
-      <div class="line"></div>
-      <div class="cards">
-        <div class="card1">
-          <img src="./assets/img/footer_img.png" alt="">
-          <div class="details">
-            <div class="nomer">Номер с джакузи и сауной</div>
-            <div class="price">7 000 р/сутки</div>
+      <div class="top_predlojeniya">
+          <div class="zag">Горячее</div>
+          <div class="line"></div>
+          <div class="cards">
+              <div class="card1">
+                  <img src="../img/footer_img.png" alt="">
+                  <div class="details">
+                      <div class="nomer">Номер с джакузи и сауной</div>
+                      <div class="price">7 000 р/сутки</div>
+                  </div>
+              </div>
+              <div class="card2">
+                  <img src="../img/footer_img.png" alt="">
+                  <div class="details">
+                      <div class="nomer">Номер с джакузи и сауной</div>
+                      <div class="price">7 000 р/сутки</div>
+                  </div>
+              </div>
+              <div class="card3">
+                  <img src="../img/footer_img.png" alt="">
+                  <div class="details">
+                      <div class="nomer">Номер с джакузи и сауной</div>
+                      <div class="price">7 000 р/сутки</div>
+                  </div>
+              </div>
           </div>
-        </div>
-        <div class="card2">
-          <img src="./assets/img/footer_img2.png" alt="">
-          <div class="details">
-            <div class="nomer">Номер с джакузи и сауной</div>
-            <div class="price">7 000 р/сутки</div>
-          </div>
-        </div>
-        <div class="card3">
-          <a href="#"></a>
-          <img src="./assets/img/footer_img3.png" alt="">
-          <div class="details">
-            <div class="nomer">Номер с джакузи и сауной</div>
-            <div class="price">7 000 р/сутки</div>
-          </div>
-        </div>
       </div>
-    </div>
   </div>
 
-
   <ul class="wrapper">
-    <a href="#">
-      <li class="icon facebook">
-      <span class="tooltip">Facebook</span>
-      <span><i class="fab fa-facebook-f"></i></span>
-    </li> 
-    </a>
-   <a href="#">
-    <li class="icon twitter">
-      <span class="tooltip">Twitter</span>
-      <span><i class="fab fa-twitter"></i></span>
-    </li>
-   </a>
-    <a href="#">
-      <li class="icon instagram">
-      <span class="tooltip">Instagram</span>
-      <span><i class="fab fa-instagram"></i></span>
-    </li>
-    </a>
-    <a href="#"><li class="icon github">
-      <span class="tooltip">Github</span>
-      <span><i class="fab fa-github"></i></span>
-    </li></a>
-    <a href="#"> <li class="icon youtube">
-      <span class="tooltip">Youtube</span>
-      <span><i class="fab fa-youtube"></i></span>
-    </li></a>
-   
+      <a href="#">
+          <li class="icon facebook">
+              <span class="tooltip">Facebook</span>
+              <span><i class="fab fa-facebook-f"></i></span>
+          </li> 
+      </a>
+      <a href="#">
+          <li class="icon twitter">
+              <span class="tooltip">Twitter</span>
+              <span><i class="fab fa-twitter"></i></span>
+          </li>
+      </a>
+      <a href="#">
+          <li class="icon instagram">
+              <span class="tooltip">Instagram</span>
+              <span><i class="fab fa-instagram"></i></span>
+          </li>
+      </a>
+      <a href="#">
+          <li class="icon github">
+              <span class="tooltip">Github</span>
+              <span><i class="fab fa-github"></i></span>
+          </li>
+      </a>
+      <a href="#">
+          <li class="icon youtube">
+              <span class="tooltip">Youtube</span>
+              <span><i class="fab fa-youtube"></i></span>
+          </li>
+      </a>
   </ul>
 </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

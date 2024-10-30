@@ -7,8 +7,8 @@ header {
   .vhod{
     margin-left: 10px;
   }
-}
 
+}
 
 .header1 {
   background-color: #22275F;
@@ -35,7 +35,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+
 }
+
 
 .header2 .logo img {
   height: 40px; 
@@ -48,8 +50,9 @@ header {
 .navigation a {
   margin-left: 20px;
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(8, 8, 8);
 }
+
 
 .burger {
   display: none; 
@@ -92,3 +95,23 @@ header {
     margin-left: auto; 
   }
 }
+@media (max-width: 768px) {
+  .navigation a {
+    color: white; 
+  }
+}
+@media (max-width: 768px) {
+  .navigation {
+    display: none; 
+    flex-direction: column; 
+  }
+
+  .navigation.active {
+    display: flex; 
+  }
+
+  .burger {
+    cursor: pointer; 
+  }
+}
+

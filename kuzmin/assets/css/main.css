@@ -49,7 +49,7 @@ header .vhod {
 .navigation a {
   margin-left: 20px;
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(8, 8, 8);
 }
 
 .burger {
@@ -90,6 +90,23 @@ header .vhod {
     margin-left: auto;
   }
 }
+@media (max-width: 768px) {
+  .navigation a {
+    color: white;
+  }
+}
+@media (max-width: 768px) {
+  .navigation {
+    display: none;
+    flex-direction: column;
+  }
+  .navigation.active {
+    display: flex;
+  }
+  .burger {
+    cursor: pointer;
+  }
+}
 .footer {
   font-size: 24px;
   background-color: #0c0c0c;
@@ -104,7 +121,7 @@ header .vhod {
 }
 .footer input {
   height: 50px;
-  width: 600px;
+  width: 500px;
   max-width: 100%;
   padding: 0 15px;
   font-size: 16px;
@@ -167,16 +184,16 @@ header .vhod {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  margin-top: -90px;
+  margin-top: -80px;
   text-align: center;
 }
 .footer .container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 70px;
   color: white;
   flex-wrap: wrap;
+  margin-top: 60px;
 }
 .footer .wrapper {
   display: flex;
@@ -264,7 +281,6 @@ header .vhod {
   .footer .footer .container {
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
   }
   .footer .footer input {
     width: 90%;
@@ -290,7 +306,6 @@ header .vhod {
 }
 .footer .companiya {
   max-width: 400px;
-  margin-top: 100px;
 }
 .footer .companiya .zag {
   font-size: 1.5rem;
@@ -533,25 +548,13 @@ i.fa-star {
 /* Адаптивные стили */
 @media (max-width: 768px) {
   .card {
-    margin: 10px 0; /* Уменьшаем отступы на мобильных устройствах */
+    margin: 10px 0;
   }
   .card-body h2 {
-    font-size: 1em; /* Уменьшаем размер заголовка на мобильных устройствах */
+    font-size: 1em;
   }
   .btn-group button {
-    width: 100%; /* Кнопки занимают 100% ширины на мобильных */
-  }
-}
-@media (max-width: 480px) {
-  .card {
-    margin: 5px 0; /* Дополнительное уменьшение отступов на очень маленьких экранах */
-  }
-  .card-body h2 {
-    font-size: 0.9em; /* Еще больше уменьшаем размер заголовка */
-  }
-  .owl-carousel .owl-nav button {
-    width: 25px; /* Уменьшаем размер кнопок навигации */
-    padding: 3px; /* Уменьшаем отступы внутри кнопок */
+    width: 100%;
   }
 }
 .reg {
@@ -759,6 +762,10 @@ i.fa-star {
   .reg .container #flip:checked ~ .forms .login-form {
     display: none;
   }
+}
+
+.contact {
+  margin-bottom: 40px;
 }
 
 * {
