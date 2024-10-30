@@ -1,15 +1,17 @@
 .nasha_gostinica {
   text-align: center;
   margin-top: 32px;
+
   .cards {
     margin-top: 50px;
     display: flex; 
     justify-content: space-between; 
     flex-wrap: wrap; 
     gap: 10px; 
-    a{
+    a {
       text-decoration: none;
     }
+
     .card, .card2, .card3, .card4 { 
       background-size: cover; 
       background-position: center; 
@@ -21,6 +23,10 @@
       position: relative; 
       background-color: #fff; 
       transition: background-color 0.3s ease;
+      
+     
+      margin: 0; 
+      box-sizing: border-box;
 
       .icon {
         position: absolute; 
@@ -35,7 +41,7 @@
         margin-top: auto;
         padding: 10px; 
         text-align: center; 
-        margin-bottom: 26px;
+        margin-bottom: 26px; 
       }
 
       .hover-text {

@@ -294,6 +294,7 @@
   padding: 1rem;
   margin-bottom: 0.5rem;
   align-items: center;
+  cursor: pointer;
 }
 .footer .top_predlojeniya .card1 img, .footer .top_predlojeniya .card2 img, .footer .top_predlojeniya .card3 img {
   max-width: 100px;
@@ -341,6 +342,8 @@
   position: relative;
   background-color: #fff;
   transition: background-color 0.3s ease;
+  margin: 0;
+  box-sizing: border-box;
 }
 .nasha_gostinica .cards .card .icon, .nasha_gostinica .cards .card2 .icon, .nasha_gostinica .cards .card3 .icon, .nasha_gostinica .cards .card4 .icon {
   position: absolute;
@@ -465,6 +468,212 @@ i.fa-star {
 .owl-carousel .owl-nav .owl-next [aria-label=Next],
 .owl-carousel .owl-nav .owl-prev [aria-label=Previous] {
   visibility: hidden;
+}
+
+.reg {
+  margin-top: 80px;
+}
+.reg .container {
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  background: #fff;
+  padding: 40px 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  perspective: 2700px;
+}
+.reg .container .cover {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 50%;
+  z-index: 98;
+  transition: all 1s ease;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.reg .container #flip:checked ~ .cover {
+  transform: rotateY(-180deg);
+}
+.reg .container #flip:checked ~ .forms .login-form {
+  pointer-events: none;
+}
+.reg .container .cover .front,
+.reg .container .cover .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reg .cover .back {
+  transform: rotateY(180deg);
+}
+.reg .container .cover img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+}
+.reg .container .cover .text {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.reg .cover .text::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+.reg .cover .text .text-1,
+.reg .cover .text .text-2 {
+  z-index: 20;
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.reg .cover .text .text-2 {
+  font-size: 15px;
+  font-weight: 500;
+}
+.reg .container .forms {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+.reg .container .form-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.reg .form-content .login-form,
+.reg .form-content .signup-form {
+  width: calc(50% - 25px);
+}
+.reg .forms .form-content .title {
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+.reg .forms .form-content .title:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 25px;
+  background: #7d2ae8;
+}
+.reg .forms .signup-form .title:before {
+  width: 20px;
+}
+.reg .forms .form-content .input-boxes {
+  margin-top: 30px;
+}
+.reg .forms .form-content .input-box {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  margin: 10px 0;
+  position: relative;
+}
+.reg .form-content .input-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.reg .form-content .input-box input:focus,
+.reg .form-content .input-box input:valid {
+  border-color: #7d2ae8;
+}
+.reg .form-content .input-box i {
+  position: absolute;
+  color: #7d2ae8;
+  font-size: 17px;
+}
+.reg .forms .form-content .text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+.reg .forms .form-content .text a {
+  text-decoration: none;
+}
+.reg .forms .form-content .text a:hover {
+  text-decoration: underline;
+}
+.reg .forms .form-content .button {
+  color: #fff;
+  margin-top: 40px;
+}
+.reg .forms .form-content .button input {
+  color: #fff;
+  background: #7d2ae8;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.reg .forms .form-content .button input:hover {
+  background: #5b13b9;
+}
+.reg .forms .form-content label {
+  color: #5b13b9;
+  cursor: pointer;
+}
+.reg .forms .form-content label:hover {
+  text-decoration: underline;
+}
+.reg .forms .form-content .login-text,
+.reg .forms .form-content .sign-up-text {
+  text-align: center;
+  margin-top: 25px;
+}
+.reg .container #flip {
+  display: none;
+}
+@media (max-width: 730px) {
+  .reg .container .cover {
+    display: none;
+  }
+  .reg .form-content .login-form,
+  .reg .form-content .signup-form {
+    width: 100%;
+  }
+  .reg .form-content .signup-form {
+    display: none;
+  }
+  .reg .container #flip:checked ~ .forms .signup-form {
+    display: block;
+  }
+  .reg .container #flip:checked ~ .forms .login-form {
+    display: none;
+  }
 }
 
 * {
