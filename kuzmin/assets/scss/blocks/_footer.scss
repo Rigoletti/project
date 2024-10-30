@@ -14,10 +14,11 @@
 
   input {
     height: 50px;
-    width: 300px;
+    width: 600px;
     max-width: 100%;
     padding: 0 15px;
     font-size: 16px;
+    margin-bottom: 10px;
 
     &::placeholder {
       color: #999;
@@ -27,23 +28,40 @@
   }
 
   .btn {
-    border: none;
+
     display: block;
     text-align: center;
     cursor: pointer;
     text-transform: uppercase;
     outline: none;
+    overflow: hidden;
     position: relative;
     color: #fff;
     font-weight: 700;
     font-size: 15px;
     background-color: #222;
     padding: 17px 60px;
-    margin: 10px auto 0;
+    margin: 0 auto;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
+    
   }
 
+  .btn span {
+    position: relative;
+    z-index: 1;
+  }
 
+  .btn:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 490%;
+    width: 140%;
+    background: #78c7d2;
+    transition: all 0.5s ease-in-out;
+    transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  }
 
   .btn:hover:after {
     transform: translateX(-9%) translateY(-25%) rotate(45deg);
@@ -64,6 +82,7 @@
     align-items: center;
     padding: 20px;
     margin-top: -90px;
+    text-align: center;
   }
 
   .container {
@@ -155,7 +174,7 @@
   }
 
   .wrapper .github:hover {
-    background: #424141;
+    background: #a3a1a1;
   }
 
   .wrapper .youtube:hover {

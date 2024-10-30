@@ -8,6 +8,7 @@
     justify-content: space-between; 
     flex-wrap: wrap; 
     gap: 10px; 
+
     a {
       text-decoration: none;
     }
@@ -23,8 +24,6 @@
       position: relative; 
       background-color: #fff; 
       transition: background-color 0.3s ease;
-      
-     
       margin: 0; 
       box-sizing: border-box;
 
@@ -81,6 +80,35 @@
     }
     .card4 {
       background-image: url(../img/bg4.png);
+    }
+  }
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .nasha_gostinica {
+    .cards {
+      justify-content: center; /* Центрируем карточки на мобильных устройствах */
+    }
+
+    .card, .card2, .card3, .card4 {
+      width: 100%; /* Ширина карточек на мобильных устройствах */
+      max-width: 300px; /* Максимальная ширина карточек */
+      height: auto; /* Автоматическая высота для адаптации */
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .nasha_gostinica {
+    .cards {
+      flex-direction: column; /* Вертикальное расположение карточек на очень маленьких экранах */
+      align-items: center; /* Центрируем карточки */
+    }
+
+    .card, .card2, .card3, .card4 {
+      width: 90%; /* Ширина карточек на маленьких экранах */
+      height: auto; /* Автоматическая высота для адаптации */
     }
   }
 }

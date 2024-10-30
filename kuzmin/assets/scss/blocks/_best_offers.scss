@@ -99,3 +99,37 @@ i.fa-star {
 .owl-carousel .owl-nav .owl-prev [aria-label="Previous"] {
   visibility: hidden;
 }
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .card {
+    margin: 10px 0; /* Уменьшаем отступы на мобильных устройствах */
+  }
+
+  .card-body h2 {
+    font-size: 1em; /* Уменьшаем размер заголовка на мобильных устройствах */
+  }
+
+  .btn-group {
+    button {
+      width: 100%; /* Кнопки занимают 100% ширины на мобильных */
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    margin: 5px 0; /* Дополнительное уменьшение отступов на очень маленьких экранах */
+  }
+
+  .card-body h2 {
+    font-size: 0.9em; /* Еще больше уменьшаем размер заголовка */
+  }
+
+  .owl-carousel {
+    .owl-nav button {
+      width: 25px; /* Уменьшаем размер кнопок навигации */
+      padding: 3px; /* Уменьшаем отступы внутри кнопок */
+    }
+  }
+}
