@@ -1,6 +1,10 @@
 .footer {
   font-size: 24px;
-
+  background-color: #0c0c0c;
+  height: 583px;
+  a{
+    color: #494747;
+  }
   button {
     width: 200px;
     height: 50px;
@@ -9,13 +13,13 @@
   input {
     height: 50px;
     width: 400px;
-    padding: 0 15px; // Добавьте горизонтальные отступы
-    font-size: 16px; // Убедитесь, что размер шрифта подходит для вашего дизайна
+    padding: 0 15px; 
+    font-size: 16px; 
 
     &::placeholder {
-      color: #999; // Цвет для placeholder (можно изменить)
-      opacity: 1; // Убедитесь, что opacity равен 1, чтобы placeholder был виден
-      padding-left: 10px; // Добавьте отступ для placeholder, если нужно
+      color: #999; 
+      opacity: 1; 
+      padding-left: 10px;
     }
   }
 
@@ -35,6 +39,7 @@
     padding: 17px 60px;
     margin: 0 auto;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
+    
   }
 
   .btn span {
@@ -78,6 +83,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; 
+    
   }
 
   .input-button {
@@ -93,65 +99,200 @@
   .title {
     margin-top: 15px;
   }
-  
   .wrapper {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    display: inline-flex;
+    list-style: none;
+    justify-content: center; 
+margin-top: -20px;
+margin-left: 235px;
   }
   
-  .link_wrapper {
+  .wrapper .icon {
     position: relative;
-  }
-  
-  a {
-    display: block;
-    width: 250px;
-    height: 50px;
-    line-height: 50px;
-    font-weight: bold;
-    text-decoration: none;
-    background: #333;
-    text-align: center;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: 3px solid #333;
-    transition: all .35s;
-  }
-  
-  .icon {
+    background: #ffffff;
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
     width: 50px;
     height: 50px;
-    border: 3px solid transparent;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .wrapper .tooltip {
     position: absolute;
-    transform: rotate(45deg);
-    right: 0;
     top: 0;
-    z-index: -1;
-    transition: all .35s;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   
-  .icon svg {
-    width: 30px;
+  .wrapper .tooltip::before {
     position: absolute;
-    top: calc(50% - 15px);
-    left: calc(50% - 15px);
-    transform: rotate(-45deg);
-    fill: #2ecc71;
-    transition: all .35s;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   
-  a:hover {
-    width: 200px;
-    border: 3px solid #2ecc71;
-    background: transparent;
-    color: #2ecc71;
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
   
-  a:hover + .icon {
-    border: 3px solid #2ecc71;
-    right: -25%;
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #ffffff;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #ffffff;
+  }
+  
+  .wrapper .github:hover,
+  .wrapper .github:hover .tooltip,
+  .wrapper .github:hover .tooltip::before {
+    background: #424141;
+    color: #ffffff;
+  }
+  
+  .wrapper .youtube:hover,
+  .wrapper .youtube:hover .tooltip,
+  .wrapper .youtube:hover .tooltip::before {
+    background: #CD201F;
+    color: #ffffff;
+  }
+
+  .companiya {
+    max-width: 400px; 
+    margin-top: 100px; 
+    
+    .zag {
+      font-size: 1.5rem; 
+    }
+  
+    .line {
+      height: 2px;
+      background-color: #78b2f5;
+      margin-bottom: 1rem; 
+      width: 60px;
+    }
+  
+    .text {
+      font-size: 0.9rem; 
+      line-height: 1.3; 
+      display: flex;
+      flex-direction: column;
+  
+      p {
+        margin: 0; 
+        margin-bottom: 0.2rem; 
+      }
+    }
+  }
+
+  .container {
+    display: flex; 
+    justify-content: space-between;
+    align-items: flex-start; 
+    margin-top: 70px;
+    color: white;
+
+    .companiya, .top_predlojeniya {
+        max-width: 600px; 
+        margin: 0; 
+    }
+
+    .top_predlojeniya {
+        margin-left: -130px; 
+    }
+  }
+
+  .top_predlojeniya {
+    .zag {
+      font-size: 1.5rem; 
+    }
+
+    .line {
+      height: 2px; 
+      background-color: #78b2f5;
+      margin-bottom: 1rem; 
+      width: 60px;
+    }
+
+    .cards {
+      display: flex; 
+      flex-direction: column; 
+      margin-top: 1rem; 
+    }
+
+    .card1, .card2, .card3 {
+      display: flex; 
+      max-width: 750px; 
+      border: 1px solid #ccc; 
+      border-radius: 5px; 
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+      align-items: center; 
+
+      img {
+        max-width: 100px; 
+        height: auto;
+        margin-right: 1rem; 
+      }
+
+      .details {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-start; 
+        flex: 1; 
+      }
+
+      .nomer {
+        font-size: 1rem;
+        margin: 0; 
+      }
+
+      .price {
+        font-size: 0.9rem; 
+        color: #34B1FF; 
+        margin-top: 0.5rem; 
+      }
+    }
   }
 }
