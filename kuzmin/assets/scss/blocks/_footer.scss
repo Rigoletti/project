@@ -1,12 +1,12 @@
 .footer {
   font-size: 24px;
   background-color: #0c0c0c;
-  height: 583px;
-  
+  padding: 20px 0;
+
   a {
     color: #494747;
   }
-  
+
   button {
     width: 200px;
     height: 50px;
@@ -14,13 +14,14 @@
 
   input {
     height: 50px;
-    width: 400px;
-    padding: 0 15px; 
-    font-size: 16px; 
+    width: 300px;
+    max-width: 100%;
+    padding: 0 15px;
+    font-size: 16px;
 
     &::placeholder {
-      color: #999; 
-      opacity: 1; 
+      color: #999;
+      opacity: 1;
       padding-left: 10px;
     }
   }
@@ -32,33 +33,17 @@
     cursor: pointer;
     text-transform: uppercase;
     outline: none;
-    overflow: hidden;
     position: relative;
     color: #fff;
     font-weight: 700;
     font-size: 15px;
     background-color: #222;
     padding: 17px 60px;
-    margin: 0 auto;
+    margin: 10px auto 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
   }
 
-  .btn span {
-    position: relative;
-    z-index: 1;
-  }
 
-  .btn:after {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 490%;
-    width: 140%;
-    background: #78c7d2;
-    transition: all 0.5s ease-in-out;
-    transform: translateX(-98%) translateY(-25%) rotate(45deg);
-  }
 
   .btn:hover:after {
     transform: translateX(-9%) translateY(-25%) rotate(45deg);
@@ -69,45 +54,33 @@
     margin-top: 30px;
   }
 
-  .link a {
-    color: #000;
-    font-size: 25px;
-  }
-
   .zakaz_zvonka {
     background-color: #91B5E3;
     color: white;
-    width: 1012px;
-    height: 93px;
-    margin: 0 auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
+    padding: 20px;
   }
 
-  .input-button {
+  .container {
     display: flex;
-    align-items: center; 
-    gap: 15px; 
-  }
-  
-  .number {
-    margin-left: 12px;
-  }
-  
-  .title {
-    margin-top: 15px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 70px;
+    color: white;
+    flex-wrap: wrap;
   }
 
   .wrapper {
-    display: inline-flex;
-    list-style: none;
-    justify-content: center; 
-    margin-top: -20px;
-    margin-left: 235px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
   }
-  
+
   .wrapper .icon {
     position: relative;
     background: #ffffff;
@@ -116,11 +89,9 @@
     margin: 10px;
     width: 50px;
     height: 50px;
-    font-size: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -131,7 +102,6 @@
     top: 0;
     font-size: 14px;
     background: #ffffff;
-    color: #ffffff;
     padding: 5px 8px;
     border-radius: 5px;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -139,7 +109,7 @@
     pointer-events: none;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-  
+
   .wrapper .tooltip::before {
     position: absolute;
     content: "";
@@ -149,151 +119,169 @@
     bottom: -3px;
     left: 50%;
     transform: translate(-50%) rotate(45deg);
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
-  
+
   .wrapper .icon:hover .tooltip {
     top: -45px;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
   }
-  
+
   .wrapper .icon:hover span,
   .wrapper .icon:hover .tooltip {
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
   }
-  
-  .wrapper .facebook:hover,
+
   .wrapper .facebook:hover .tooltip,
-  .wrapper .facebook:hover .tooltip::before {
-    background: #1877F2;
-    color: #ffffff;
-  }
-  
-  .wrapper .twitter:hover,
   .wrapper .twitter:hover .tooltip,
-  .wrapper .twitter:hover .tooltip::before {
-    background: #1DA1F2;
-    color: #ffffff;
-  }
-  
-  .wrapper .instagram:hover,
   .wrapper .instagram:hover .tooltip,
-  .wrapper .instagram:hover .tooltip::before {
-    background: #E4405F;
-    color: #ffffff;
-  }
-  
-  .wrapper .github:hover,
   .wrapper .github:hover .tooltip,
-  .wrapper .github:hover .tooltip::before {
-    background: #424141;
-    color: #ffffff;
-  }
-  
-  .wrapper .youtube:hover,
-  .wrapper .youtube:hover .tooltip,
-  .wrapper .youtube:hover .tooltip::before {
-    background: #CD201F;
+  .wrapper .youtube:hover .tooltip {
     color: #ffffff;
   }
 
-  .companiya {
-    max-width: 400px; 
-    margin-top: 100px; 
-    
-    .zag {
-      font-size: 1.5rem; 
-    }
-  
-    .line {
-      height: 2px;
-      background-color: #78b2f5;
-      margin-bottom: 1rem; 
-      width: 60px;
-    }
-  
-    .text {
-      font-size: 0.9rem; 
-      line-height: 1.3; 
-      display: flex;
-      flex-direction: column;
-  
-      p {
-        margin: 0; 
-        margin-bottom: 0.2rem; 
+  .wrapper .facebook:hover {
+    background: #1877F2;
+  }
+
+  .wrapper .twitter:hover {
+    background: #1DA1F2;
+  }
+
+  .wrapper .instagram:hover {
+    background: #E4405F;
+  }
+
+  .wrapper .github:hover {
+    background: #424141;
+  }
+
+  .wrapper .youtube:hover {
+    background: #CD201F;
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      font-size: 18px;
+
+      .zakaz_zvonka {
+        width: 90%;
+        padding: 15px;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+      }
+
+      input {
+        width: 90%;
+        max-width: none;
+      }
+
+      .wrapper {
+        margin-left: 0;
+        justify-content: center;
       }
     }
   }
 
-  .container {
-    display: flex; 
-    justify-content: space-between;
-    align-items: flex-start; 
-    margin-top: 70px;
-    color: white;
+  @media (max-width: 480px) {
+    .footer {
+      font-size: 16px;
 
-    .companiya, .top_predlojeniya {
-        max-width: 600px; 
-        margin: 0; 
+      .link {
+        font-size: 16px;
+      }
+
+      .wrapper .icon {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+      }
+    }
+  }
+
+  .companiya {
+    max-width: 400px;
+    margin-top: 100px;
+
+    .zag {
+      font-size: 1.5rem;
     }
 
-    .top_predlojeniya {
-        margin-left: -130px; 
+    .line {
+      height: 2px;
+      background-color: #78b2f5;
+      margin-bottom: 1rem;
+      width: 60px;
+    }
+
+    .text {
+      font-size: 0.9rem;
+      line-height: 1.3;
+      display: flex;
+      flex-direction: column;
+
+      p {
+        margin: 0;
+        margin-bottom: 0.2rem;
+      }
     }
   }
 
   .top_predlojeniya {
     .zag {
-      font-size: 1.5rem; 
+      font-size: 1.5rem;
     }
 
     .line {
-      height: 2px; 
+      height: 2px;
       background-color: #78b2f5;
-      margin-bottom: 1rem; 
+      margin-bottom: 1rem;
       width: 60px;
     }
 
     .cards {
-      display: flex; 
-      flex-direction: column; 
-      margin-top: 1rem; 
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
     }
 
     .card1, .card2, .card3 {
-      display: flex; 
-      max-width: 750px; 
-      border: 1px solid #ccc; 
-      border-radius: 5px; 
+      display: flex;
+      max-width: 750px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
       padding: 1rem;
       margin-bottom: 0.5rem;
-      align-items: center; 
-      cursor: pointer; 
+      align-items: center;
+      cursor: pointer;
 
       img {
-        max-width: 100px; 
+        max-width: 100px;
         height: auto;
-        margin-right: 1rem; 
+        margin-right: 1rem;
       }
 
       .details {
-        display: flex; 
-        flex-direction: column; 
-        justify-content: flex-start; 
-        flex: 1; 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex: 1;
       }
 
       .nomer {
         font-size: 1rem;
-        margin: 0; 
+        margin: 0;
       }
 
       .price {
-        font-size: 0.9rem; 
-        color: #34B1FF; 
-        margin-top: 0.5rem; 
+        font-size: 0.9rem;
+        color: #34B1FF;
+        margin-top: 0.5rem;
       }
     }
   }

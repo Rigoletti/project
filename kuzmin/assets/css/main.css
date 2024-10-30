@@ -57,7 +57,7 @@
 .footer {
   font-size: 24px;
   background-color: #0c0c0c;
-  height: 583px;
+  padding: 20px 0;
 }
 .footer a {
   color: #494747;
@@ -68,7 +68,8 @@
 }
 .footer input {
   height: 50px;
-  width: 400px;
+  width: 300px;
+  max-width: 100%;
   padding: 0 15px;
   font-size: 16px;
 }
@@ -89,30 +90,14 @@
   cursor: pointer;
   text-transform: uppercase;
   outline: none;
-  overflow: hidden;
   position: relative;
   color: #fff;
   font-weight: 700;
   font-size: 15px;
   background-color: #222;
   padding: 17px 60px;
-  margin: 0 auto;
+  margin: 10px auto 0;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-.footer .btn span {
-  position: relative;
-  z-index: 1;
-}
-.footer .btn:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 490%;
-  width: 140%;
-  background: #78c7d2;
-  transition: all 0.5s ease-in-out;
-  transform: translateX(-98%) translateY(-25%) rotate(45deg);
 }
 .footer .btn:hover:after {
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
@@ -121,38 +106,29 @@
   font-size: 20px;
   margin-top: 30px;
 }
-.footer .link a {
-  color: #000;
-  font-size: 25px;
-}
 .footer .zakaz_zvonka {
   background-color: #91B5E3;
   color: white;
-  width: 1012px;
-  height: 93px;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
-.footer .input-button {
+.footer .container {
   display: flex;
-  align-items: center;
-  gap: 15px;
-}
-.footer .number {
-  margin-left: 12px;
-}
-.footer .title {
-  margin-top: 15px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 70px;
+  color: white;
+  flex-wrap: wrap;
 }
 .footer .wrapper {
-  display: inline-flex;
-  list-style: none;
+  display: flex;
   justify-content: center;
-  margin-top: -20px;
-  margin-left: 235px;
+  margin-top: 20px;
+  flex-wrap: wrap;
 }
 .footer .wrapper .icon {
   position: relative;
@@ -162,11 +138,9 @@
   margin: 10px;
   width: 50px;
   height: 50px;
-  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -176,7 +150,6 @@
   top: 0;
   font-size: 14px;
   background: #ffffff;
-  color: #ffffff;
   padding: 5px 8px;
   border-radius: 5px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -193,7 +166,6 @@
   bottom: -3px;
   left: 50%;
   transform: translate(-50%) rotate(45deg);
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .footer .wrapper .icon:hover .tooltip {
   top: -45px;
@@ -205,35 +177,62 @@
 .footer .wrapper .icon:hover .tooltip {
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
-.footer .wrapper .facebook:hover,
 .footer .wrapper .facebook:hover .tooltip,
-.footer .wrapper .facebook:hover .tooltip::before {
-  background: #1877F2;
-  color: #ffffff;
-}
-.footer .wrapper .twitter:hover,
 .footer .wrapper .twitter:hover .tooltip,
-.footer .wrapper .twitter:hover .tooltip::before {
-  background: #1DA1F2;
-  color: #ffffff;
-}
-.footer .wrapper .instagram:hover,
 .footer .wrapper .instagram:hover .tooltip,
-.footer .wrapper .instagram:hover .tooltip::before {
-  background: #E4405F;
-  color: #ffffff;
-}
-.footer .wrapper .github:hover,
 .footer .wrapper .github:hover .tooltip,
-.footer .wrapper .github:hover .tooltip::before {
-  background: #424141;
+.footer .wrapper .youtube:hover .tooltip {
   color: #ffffff;
 }
-.footer .wrapper .youtube:hover,
-.footer .wrapper .youtube:hover .tooltip,
-.footer .wrapper .youtube:hover .tooltip::before {
+.footer .wrapper .facebook:hover {
+  background: #1877F2;
+}
+.footer .wrapper .twitter:hover {
+  background: #1DA1F2;
+}
+.footer .wrapper .instagram:hover {
+  background: #E4405F;
+}
+.footer .wrapper .github:hover {
+  background: #424141;
+}
+.footer .wrapper .youtube:hover {
   background: #CD201F;
-  color: #ffffff;
+}
+@media (max-width: 768px) {
+  .footer .footer {
+    font-size: 18px;
+  }
+  .footer .footer .zakaz_zvonka {
+    width: 90%;
+    padding: 15px;
+  }
+  .footer .footer .container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .footer .footer input {
+    width: 90%;
+    max-width: none;
+  }
+  .footer .footer .wrapper {
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+@media (max-width: 480px) {
+  .footer .footer {
+    font-size: 16px;
+  }
+  .footer .footer .link {
+    font-size: 16px;
+  }
+  .footer .footer .wrapper .icon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+  }
 }
 .footer .companiya {
   max-width: 400px;
@@ -257,20 +256,6 @@
 .footer .companiya .text p {
   margin: 0;
   margin-bottom: 0.2rem;
-}
-.footer .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 70px;
-  color: white;
-}
-.footer .container .companiya, .footer .container .top_predlojeniya {
-  max-width: 600px;
-  margin: 0;
-}
-.footer .container .top_predlojeniya {
-  margin-left: -130px;
 }
 .footer .top_predlojeniya .zag {
   font-size: 1.5rem;
@@ -472,6 +457,7 @@ i.fa-star {
 
 .reg {
   margin-top: 80px;
+  margin-bottom: 80px;
 }
 .reg .container {
   position: relative;
