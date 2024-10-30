@@ -63,6 +63,7 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
+    margin-top: -90px;
   }
 
   .container {
@@ -138,7 +139,7 @@
   .wrapper .instagram:hover .tooltip,
   .wrapper .github:hover .tooltip,
   .wrapper .youtube:hover .tooltip {
-    color: #ffffff;
+    color: #ec0000;
   }
 
   .wrapper .facebook:hover {

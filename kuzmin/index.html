@@ -24,18 +24,18 @@
             Горячая линия: +7 112 233 44 55
           </div>
           <div>
-            <img src="./assets/img/Gmail Logo.png" alt="phone" />
+            <img src="./assets/img/Gmail Logo.png" alt="email" />
             hotel@mail.ru
           </div>
-          <div>
-            <img src="./assets/img/Lock.png" alt="phone" />
+          <div class="vhod">
+            <img src="./assets/img/Lock.png" alt="login" />
             <a href="./assets/pages/reg.html">Вход / Регистрация</a>
           </div>
         </section>
       </div>
       <div class="header2">
         <div class="logo">
-          <a href="./index.html"><img src="./assets/img/logo.png" alt="" /></a>
+          <a href="./index.html"><img src="./assets/img/logo.png" alt="Логотип" /></a>
         </div>
         <nav class="navigation">
           <a href="">Главная</a>
@@ -43,7 +43,16 @@
           <a href="">Контакты</a>
           <a href="">Личный кабинет</a>
         </nav>
+        <div class="burger" id="burger">
+          <i class="fas fa-bars"></i> 
+        </div>
       </div>
+      <script>
+        document.getElementById('burger').addEventListener('click', function() {
+          const navigation = document.querySelector('.navigation');
+          navigation.classList.toggle('active'); 
+        });
+      </script>
     </header>
     <!-- main -->
     <main>

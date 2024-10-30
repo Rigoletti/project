@@ -1,4 +1,16 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+header {
+  position: relative;
+}
+header a {
+  color: white;
+  text-decoration: none;
+}
+header .vhod {
+  margin-left: 10px;
+}
+
 .header1 {
   background-color: #22275F;
   color: white;
@@ -6,54 +18,78 @@
   display: flex;
   align-items: center;
 }
+
 .header1 section {
   display: flex;
   align-items: center;
   width: 100%;
 }
-.header1 section div {
-  margin-left: 24px;
+
+.header1 .phone {
   display: flex;
   align-items: center;
-}
-.header1 section img {
-  margin-right: 5px;
-}
-.header1 section a {
-  text-decoration: none;
-  color: white;
+  margin-right: 20px;
 }
 
 .header2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.header2 img {
-  margin-left: 64px;
-}
-.header2 .logo {
-  background-color: rgb(213, 214, 216);
-  width: 600px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-}
-.header2 a {
-  text-decoration: none;
-  color: black;
-  margin-left: 12px;
-}
-.header2 .navigation a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #000;
-}
-.header2 .navigation {
-  margin-left: auto;
-  padding-right: 120px;
+  padding: 10px 20px;
 }
 
+.header2 .logo img {
+  height: 40px;
+}
+
+.navigation {
+  display: flex;
+}
+
+.navigation a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+  .header2 {
+    flex-direction: row;
+    align-items: center;
+  }
+  .navigation {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: #22275F;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    z-index: 10;
+  }
+  .navigation.active {
+    display: flex;
+  }
+  .burger {
+    display: flex;
+    margin-left: auto;
+  }
+}
 .footer {
   font-size: 24px;
   background-color: #0c0c0c;
@@ -115,6 +151,7 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  margin-top: -90px;
 }
 .footer .container {
   display: flex;
@@ -182,7 +219,7 @@
 .footer .wrapper .instagram:hover .tooltip,
 .footer .wrapper .github:hover .tooltip,
 .footer .wrapper .youtube:hover .tooltip {
-  color: #ffffff;
+  color: #ec0000;
 }
 .footer .wrapper .facebook:hover {
   background: #1877F2;

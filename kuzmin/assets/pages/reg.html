@@ -15,33 +15,42 @@
     <!-- header -->
     <header>
         <div class="header1">
-            <section>
-                <div class="phone">
-                    <img src="../img/Phone.png" alt="phone" />
-                    Горячая линия: +7 112 233 44 55
-                </div>
-                <div>
-                    <img src="../img/Gmail Logo.png" alt="mail" />
-                    hotel@mail.ru
-                </div>
-                <div>
-                    <img src="../img/Lock.png" alt="lock" />
-                    <a href="./reg.html">Вход / Регистрация</a>
-                </div>
-            </section>
+          <section>
+            <div class="phone">
+              <img src="../img/Phone.png" alt="phone" />
+              Горячая линия: +7 112 233 44 55
+            </div>
+            <div>
+              <img src="../img/Gmail Logo.png" alt="email" />
+              hotel@mail.ru
+            </div>
+            <div>
+              <img src="../img/Lock.png" alt="login" />
+              <a href="../pages/reg.html">Вход / Регистрация</a>
+            </div>
+          </section>
         </div>
         <div class="header2">
-            <div class="logo">
-                <a href="../../index.html"><img src="../img/logo.png" alt="" /></a>
-            </div>
-            <nav class="navigation">
-                <a href="../../index.html">Главная</a>
-                <a href="">Каталог</a>
-                <a href="">Контакты</a>
-                <a href="">Личный кабинет</a>
-            </nav>
+          <div class="logo">
+            <a href="../../index.html"><img src="../img/logo.png" alt="Логотип" /></a>
+          </div>
+          <nav class="navigation">
+            <a href="../../index.html">Главная</a>
+            <a href="">Каталог</a>
+            <a href="">Контакты</a>
+            <a href="">Личный кабинет</a>
+          </nav>
+          <div class="burger" id="burger">
+            <i class="fas fa-bars"></i> 
+          </div>
         </div>
-    </header>
+        <script>
+          document.getElementById('burger').addEventListener('click', function() {
+            const navigation = document.querySelector('.navigation');
+            navigation.classList.toggle('active'); 
+          });
+        </script>
+      </header>
     <!-- main -->
     <main>
       <div class="reg">
