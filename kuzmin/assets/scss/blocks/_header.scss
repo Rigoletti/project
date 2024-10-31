@@ -1,117 +1,116 @@
+// header
 header {
-  position: relative;
-  a{
-    color: white;
-    text-decoration: none;
-  }
-  .vhod{
-    margin-left: 10px;
-  }
+  position: relative; /* Относительное позиционирование для header */
+}
 
+header a {
+  color: white; /* Цвет ссылок в header */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+}
+
+.vhod {
+  margin-left: 10px; /* Отступ слева для элемента входа */
 }
 
 .header1 {
-  background-color: #22275F;
-  color: white;
-  height: 50px;
-  display: flex;
-  align-items: center;
+  background-color: #22275F; /* Темно-синий фон для первого заголовка */
+  color: white; /* Цвет текста в заголовке */
+  height: 50px; /* Высота заголовка */
+  display: flex; /* Используем flexbox для размещения содержимого */
+  align-items: center; /* Центрирование элементов по вертикали */
+  flex-wrap: nowrap; /* Запрещаем перенос элементов на новую строку */
 }
 
 .header1 section {
-  display: flex;
-  align-items: center;
-  width: 100%;
+  display: flex; /* Flex-контейнер для размещения элементов внутри секции */
+  align-items: center; /* Центрирование элементов по вертикали */
+  width: 100%; /* Ширина секции 100% */
 }
 
-.header1 .phone {
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
+.header1 .phone, .header1 .email, .header1 .vhod {
+  display: flex; /* Flex-контейнер для размещения элементов */
+  align-items: center; /* Центрирование элементов по вертикали */
+  margin-right: 20px; /* Отступ справа для элементов */
 }
 
 .header2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-
+  display: flex; /* Flex-контейнер для размещения элементов второго заголовка */
+  justify-content: space-between; /* Распределение элементов с равными промежутками */
+  align-items: center; /* Центрирование элементов по вертикали */
+  padding: 10px 20px; /* Внутренние отступы для второго заголовка */
 }
 
-
 .header2 .logo img {
-  height: 40px; 
+  height: 40px; /* Высота логотипа */
 }
 
 .navigation {
-  display: flex; 
+  display: flex; /* Flex-контейнер для навигационных ссылок */
 }
 
 .navigation a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: rgb(8, 8, 8);
+  margin-left: 20px; /* Отступ слева для навигационных ссылок */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+  color: rgb(8, 8, 8); /* Цвет навигационных ссылок */
 }
 
-
 .burger {
-  display: none; 
-  flex-direction: column;
-  cursor: pointer;
+  display: none; /* Скрываем бургер-меню по умолчанию */
+  flex-direction: column; /* Вертикальная ориентация элементов бургер-меню */
+  cursor: pointer; /* Указатель курсора при наведении */
 }
 
 .burger div {
-  width: 30px;
-  height: 3px;
-  background-color: white;
-  margin: 4px 0;
-  transition: 0.4s;
+  width: 30px; /* Ширина полосок бургер-меню */
+  height: 3px; /* Высота полосок бургер-меню */
+  background-color: white; /* Цвет полосок бургер-меню */
+  margin: 4px 0; /* Отступы между полосками */
+  transition: 0.4s; /* Плавный переход для анимации бургер-меню */
 }
 
 /* Адаптивные стили */
 @media (max-width: 768px) {
+  .header1 {
+      flex-direction: column; /* Вертикальная ориентация элементов в заголовке на маленьких экранах */
+      align-items: flex-start; /* Выравнивание элементов по левому краю */
+  }
+
+  .header1 section {
+      flex-direction: column; /* Вертикальная ориентация элементов в секции на маленьких экранах */
+      align-items: flex-start; /* Выравнивание элементов по левому краю */
+  }
+
   .header2 {
-    flex-direction: row; 
-    align-items: center; 
+      flex-direction: row; /* Горизонтальная ориентация элементов второго заголовка */
+      align-items: center; /* Центрирование элементов по вертикали */
   }
 
   .navigation {
-    display: none; 
-    flex-direction: column;
-    position: absolute;
-    background-color: #22275F;
-    width: 100%;
-    top: 50px; 
-    left: 0;
-    z-index: 10;
+      display: none; /* Скрываем навигацию по умолчанию на маленьких экранах */
+      flex-direction: column; /* Вертикальная ориентация навигационных ссылок */
+      position: absolute; /* Абсолютное позиционирование для навигации */
+      background-color: #22275F; /* Темно-синий фон для навигации */
+      width: 100%; /* Ширина навигации 100% */
+      top: 50px; /* Расположение навигации ниже заголовка */
+      left: 0; /* Прикрепляем к левой стороне */
+      z-index: 10; /* Устанавливаем уровень наложения */
   }
 
   .navigation.active {
-    display: flex; 
+      display: flex; /* Показываем навигацию при активном состоянии */
   }
 
   .burger {
-    display: flex; 
-    margin-left: auto; 
+      display: flex; /* Показываем бургер-меню на маленьких экранах */
+      margin-left: auto; /* Автоматический отступ слева для выравнивания */
   }
-}
-@media (max-width: 768px) {
+
+  .header2 .logo {
+      margin-bottom: 10px; /* Отступ снизу для логотипа */
+  }
+
   .navigation a {
-    color: white; 
+      color: white; /* Цвет навигационных ссылок на маленьких экранах */
+      margin: 10px 0; /* Вертикальные отступы для навигационных ссылок */
   }
 }
-@media (max-width: 768px) {
-  .navigation {
-    display: none; 
-    flex-direction: column; 
-  }
-
-  .navigation.active {
-    display: flex; 
-  }
-
-  .burger {
-    cursor: pointer; 
-  }
-}
-

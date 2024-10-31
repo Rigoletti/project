@@ -1,29 +1,30 @@
+// секция - лучшие предложения
 .card {
-  width: 100%;
-  border-radius: 10px;
-  margin: 20px 0; 
+  width: 100%; /* Ширина карточки */
+  border-radius: 10px; /* Закругление углов карточки */
+  margin: 20px 0; /* Отступы сверху и снизу для карточки */
 
   img {
-    border-radius: 10px 10px 0 0;
-    object-fit: cover;
+    border-radius: 10px 10px 0 0; /* Закругление верхних углов изображения */
+    object-fit: cover; /* Обеспечиваем обрезку изображения по размеру карточки */
   }
 }
 
 i.fa-star {
-  color: orangered;
+  color: orangered; /* Цвет иконки звезды */
 }
 
 .btn-group {
   i {
-    color: orangered;
+    color: orangered; /* Цвет иконок в группе кнопок */
   }
 
   button {
     &:hover {
-      background-color: orange;
+      background-color: orange; /* Цвет фона кнопки при наведении */
 
       i.fa-solid {
-        color: black;
+        color: black; /* Цвет иконки при наведении на кнопку */
       }
     }
   }
@@ -31,9 +32,9 @@ i.fa-star {
 
 .card-body {
   h2 {
-    font-size: 1.2em;
-    text-transform: capitalize;
-    margin: 10px 0; 
+    font-size: 1.2em; /* Размер шрифта для заголовка карточки */
+    text-transform: capitalize; /* Преобразование текста в заголовке в заглавные буквы */
+    margin: 10px 0; /* Отступы сверху и снизу для заголовка */
   }
 }
 
@@ -42,16 +43,16 @@ i.fa-star {
     .owl-dot {
       &.active span,
       &:hover span {
-        background: orange;
-        width: 30px;
+        background: orange; /* Цвет активной точки и точки при наведении */
+        width: 30px; /* Ширина активной точки */
       }
 
       span {
-        width: 15px;
-        height: 15px;
-        background: orangered;
-        transition: all 0.2s ease;
-        margin: 0 5px; 
+        width: 15px; /* Ширина точки */
+        height: 15px; /* Высота точки */
+        background: orangered; /* Цвет точки */
+        transition: all 0.2s ease; /* Плавный переход для точки */
+        margin: 0 5px; /* Отступы между точками */
       }
     }
   }
@@ -62,33 +63,34 @@ i.fa-star {
     button {
       &.owl-next,
       &.owl-prev {
-        position: relative;
-        background-color: rgba(255, 166, 0, 0.3);
-        width: 30px;
-        padding: 5px;
-        margin: 0 10px; 
+        position: relative; /* Относительное позиционирование для кнопок навигации */
+        background-color: rgba(255, 166, 0, 0.3); /* Цвет фона кнопок навигации */
+        width: 30px; /* Ширина кнопок навигации */
+        padding: 5px; /* Внутренние отступы для кнопок навигации */
+        margin: 0 10px; /* Отступы слева и справа для кнопок навигации */
+
         &:hover {
-          background-color: orange;
+          background-color: orange; /* Цвет фона кнопок навигации при наведении */
         }
 
         &::before {
-          width: 100%;
-          height: 100%;
-          color: orangered;
+          width: 100%; /* Ширина псевдоэлемента перед кнопкой */
+          height: 100%; /* Высота псевдоэлемента перед кнопкой */
+          color: orangered; /* Цвет псевдоэлемента */
         }
 
         &.owl-next::before {
-          content: '\f061';
-          font-family: 'Font Awesome 5 Free';
-          font-weight: 900;
-          margin-right: 5px;
+          content: '\f061'; /* Иконка "вперед" */
+          font-family: 'Font Awesome 5 Free'; /* Шрифт для иконок */
+          font-weight: 900; /* Жирность шрифта для иконок */
+          margin-right: 5px; /* Отступ справа для иконки "вперед" */
         }
 
         &.owl-prev::before {
-          content: '\f060';
-          font-family: 'Font Awesome 5 Free';
-          font-weight: 900;
-          margin-right: 5px;
+          content: '\f060'; /* Иконка "назад" */
+          font-family: 'Font Awesome 5 Free'; /* Шрифт для иконок */
+          font-weight: 900; /* Жирность шрифта для иконок */
+          margin-right: 5px; /* Отступ справа для иконки "назад" */
         }
       }
     }
@@ -97,24 +99,22 @@ i.fa-star {
 
 .owl-carousel .owl-nav .owl-next [aria-label="Next"], 
 .owl-carousel .owl-nav .owl-prev [aria-label="Previous"] {
-  visibility: hidden;
+  visibility: hidden; /* Скрываем кнопки навигации по умолчанию */
 }
 
 /* Адаптивные стили */
 @media (max-width: 768px) {
   .card {
-    margin: 10px 0;
+    margin: 10px 0; /* Уменьшаем отступы для карточек на маленьких экранах */
   }
 
   .card-body h2 {
-    font-size: 1em; 
+    font-size: 1em; /* Уменьшаем размер шрифта заголовка на маленьких экранах */
   }
 
   .btn-group {
     button {
-      width: 100%; 
+      width: 100%; /* Ширина кнопок на маленьких экранах */
     }
   }
 }
-
-

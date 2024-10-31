@@ -1,237 +1,239 @@
 .reg {
-  margin-top: 80px;
-  margin-bottom: 80px;
-  .container {
-      position: relative;
-      max-width: 850px;
-      width: 100%;
-      background: #fff;
-      padding: 40px 30px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-      perspective: 2700px;
+    margin-top: 80px; /* Отступ сверху */
+    margin-bottom: 80px; /* Отступ снизу */
+    
+    .container {
+        position: relative; /* Относительное позиционирование */
+        max-width: 850px; /* Максимальная ширина */
+        width: 100%; /* Ширина 100% */
+        background: #fff; /* Фоновый цвет */
+        padding: 40px 30px; /* Внутренние отступы */
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Тень */
+        perspective: 2700px; /* Перспектива для 3D */
+    }
+  
+    .container .cover {
+        position: absolute; /* Абсолютное позиционирование */
+        top: 0; /* Сверху */
+        left: 50%; /* По центру */
+        height: 100%; /* Высота 100% */
+        width: 50%; /* Ширина 50% */
+        z-index: 98; /* Уровень наложения */
+        transition: all 1s ease; /* Плавный переход */
+        transform-origin: left; /* Точка поворота */
+        transform-style: preserve-3d; /* 3D-эффект */
+        backface-visibility: hidden; /* Скрытие задней стороны */
+    }
+  
+    .container #flip:checked ~ .cover {
+        transform: rotateY(-180deg); /* Поворот при переключении */
+    }
+  
+    .container #flip:checked ~ .forms .login-form {
+        pointer-events: none; /* Отключение взаимодействия */
+    }
+  
+    .container .cover .front,
+    .container .cover .back {
+        position: absolute; /* Абсолютное позиционирование */
+        top: 0; /* Сверху */
+        left: 0; /* Слева */
+        height: 100%; /* Высота 100% */
+        width: 100%; /* Ширина 100% */
+        display: flex; /* Flex-контейнер */
+        justify-content: center; /* Центрирование по горизонтали */
+        align-items: center; /* Центрирование по вертикали */
+    }
+  
+    .cover .back {
+        transform: rotateY(180deg); /* Поворот задней стороны */
+    }
+  
+    .container .cover img {
+        position: absolute; /* Абсолютное позиционирование */
+        height: 100%; /* Высота 100% */
+        width: 100%; /* Ширина 100% */
+        object-fit: cover; /* Заполнение области */
+        z-index: 1; /* Уровень наложения */
+    }
+  
+    .container .cover .text {
+        position: relative; /* Относительное позиционирование */
+        z-index: 10; /* Уровень наложения */
+        height: 100%; /* Высота 100% */
+        width: 100%; /* Ширина 100% */
+        display: flex; /* Flex-контейнер */
+        flex-direction: column; /* Вертикальная ориентация */
+        align-items: center; /* Центрирование по горизонтали */
+        justify-content: center; /* Центрирование по вертикали */
+        text-align: center; /* Центрирование текста */
+    }
+  
+    .cover .text::before {
+        content: ''; /* Псевдоэлемент для затемнения */
+        position: absolute; /* Абсолютное позиционирование */
+        height: 100%; /* Высота 100% */
+        width: 100%; /* Ширина 100% */
+        background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+        z-index: 5; /* Уровень наложения */
+    }
+  
+    .cover .text .text-1,
+    .cover .text .text-2 {
+        z-index: 20; /* Уровень наложения */
+        font-size: 26px; /* Размер шрифта */
+        font-weight: 600; /* Жирность шрифта */
+        color: #fff; /* Цвет текста */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для текста */
+    }
+  
+    .cover .text .text-2 {
+        font-size: 15px; /* Размер шрифта для дополнительного текста */
+        font-weight: 500; /* Жирность шрифта */
+    }
+  
+    .container .forms {
+        height: 100%; /* Высота форм 100% */
+        width: 100%; /* Ширина форм 100% */
+        background: #fff; /* Фоновый цвет форм */
+    }
+  
+    .container .form-content {
+        display: flex; /* Flex-контейнер */
+        align-items: center; /* Центрирование по вертикали */
+        justify-content: space-between; /* Распределение по горизонтали */
+    }
+  
+    .form-content .login-form,
+    .form-content .signup-form {
+        width: calc(100% / 2 - 25px); /* Ширина форм */
+    }
+  
+    .forms .form-content .title {
+        position: relative; /* Относительное позиционирование */
+        font-size: 24px; /* Размер шрифта заголовка */
+        font-weight: 500; /* Жирность шрифта */
+        color: #333; /* Цвет заголовка */
+    }
+  
+    .forms .form-content .title:before {
+        content: ''; /* Псевдоэлемент для линии */
+        position: absolute; /* Абсолютное позиционирование */
+        left: 0; /* Слева */
+        bottom: 0; /* Снизу */
+        height: 3px; /* Высота линии */
+        width: 25px; /* Ширина линии */
+        background: #7d2ae8; /* Цвет линии */
+    }
+  
+    .forms .signup-form .title:before {
+        width: 20px; /* Ширина линии для формы регистрации */
+    }
+  
+    .forms .form-content .input-boxes {
+        margin-top: 30px; /* Отступ сверху для ввода */
+    }
+  
+    .forms .form-content .input-box {
+        display: flex; /* Flex-контейнер */
+        align-items: center; /* Центрирование по вертикали */
+        height: 50px; /* Высота поля ввода */
+        width: 100%; /* Ширина 100% */
+        margin: 10px 0; /* Отступы */
+        position: relative; /* Относительное позиционирование */
+    }
+  
+    .form-content .input-box input {
+        height: 100%; /* Высота 100% */
+        width: 100%; /* Ширина 100% */
+        outline: none; /* Убираем обводку */
+        border: none; /* Убираем рамку */
+        padding: 0 30px; /* Внутренние отступы */
+        font-size: 16px; /* Размер шрифта */
+        font-weight: 500; /* Жирность шрифта */
+        border-bottom: 2px solid rgba(0, 0, 0, 0.2); /* Нижняя рамка */
+        transition: all 0.3s ease; /* Плавный переход */
+    }
+  
+    .form-content .input-box input:focus,
+    .form-content .input-box input:valid {
+        border-color: #7d2ae8; /* Цвет рамки при фокусе */
+    }
+  
+    .form-content .input-box i {
+        position: absolute; /* Абсолютное позиционирование иконки */
+        color: #7d2ae8; /* Цвет иконки */
+        font-size: 17px; /* Размер иконки */
+    }
+  
+    .forms .form-content .text {
+        font-size: 14px; /* Размер шрифта для текста */
+        font-weight: 500; /* Жирность шрифта */
+        color: #333; /* Цвет текста */
+    }
+  
+    .forms .form-content .text a {
+        text-decoration: none; /* Убираем подчеркивание */
+    }
+  
+    .forms .form-content .text a:hover {
+        text-decoration: underline; /* Подчеркивание при наведении */
+    }
+  
+    .forms .form-content .button {
+        color: #fff; /* Цвет текста кнопки */
+        margin-top: 40px; /* Отступ сверху для кнопки */
+    }
+  
+    .forms .form-content .button input {
+        color: #fff; /* Цвет текста кнопки */
+        background: #7d2ae8; /* Фоновый цвет кнопки */
+        border-radius: 6px; /* Скругление углов */
+        padding: 0; /* Убираем внутренние отступы */
+        cursor: pointer; /* Курсор при наведении */
+        transition: all 0.4s ease; /* Плавный переход */
+    }
+  
+    .forms .form-content .button input:hover {
+        background: #5b13b9; /* Цвет кнопки при наведении */
+    }
+  
+    .forms .form-content label {
+        color: #5b13b9; /* Цвет метки */
+        cursor: pointer; /* Курсор при наведении */
+    }
+  
+    .forms .form-content label:hover {
+        text-decoration: underline; /* Подчеркивание при наведении */
+    }
+  
+    .forms .form-content .login-text,
+    .forms .form-content .sign-up-text {
+        text-align: center; /* Центрирование текста */
+        margin-top: 25px; /* Отступ сверху */
+    }
+  
+    .container #flip {
+        display: none; /* Скрываем переключатель */
+    }
+  
+    @media (max-width: 730px) {
+        .container .cover {
+            display: none; /* Скрываем накладку на мобильных устройствах */
+        }
+        .form-content .login-form,
+        .form-content .signup-form {
+            width: 100%; /* Ширина форм 100% */
+        }
+        .form-content .signup-form {
+            display: none; /* Скрываем форму регистрации */
+        }
+        .container #flip:checked ~ .forms .signup-form {
+            display: block; /* Показываем форму регистрации при переключении */
+        }
+        .container #flip:checked ~ .forms .login-form {
+            display: none; /* Скрываем форму входа при переключении */
+        }
+    }
   }
-
-  .container .cover {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      height: 100%;
-      width: 50%;
-      z-index: 98;
-      transition: all 1s ease;
-      transform-origin: left;
-      transform-style: preserve-3d;
-      backface-visibility: hidden;
-  }
-
-  .container #flip:checked ~ .cover {
-      transform: rotateY(-180deg);
-  }
-
-  .container #flip:checked ~ .forms .login-form {
-      pointer-events: none;
-  }
-
-  .container .cover .front,
-  .container .cover .back {
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
-
-  .cover .back {
-      transform: rotateY(180deg);
-  }
-
-  .container .cover img {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      z-index: 1; 
-  }
-
-  .container .cover .text {
-      position: relative;
-      z-index: 10;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-  }
-
-  .cover .text::before {
-      content: '';
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.5); 
-      z-index: 5; 
-  }
-
-  .cover .text .text-1,
-  .cover .text .text-2 {
-      z-index: 20;
-      font-size: 26px;
-      font-weight: 600;
-      color: #fff; 
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
-  }
-
-  .cover .text .text-2 {
-      font-size: 15px;
-      font-weight: 500;
-  }
-
-  .container .forms {
-      height: 100%;
-      width: 100%;
-      background: #fff;
-  }
-
-  .container .form-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-  }
-
-  .form-content .login-form,
-  .form-content .signup-form {
-      width: calc(100% / 2 - 25px);
-  }
-
-  .forms .form-content .title {
-      position: relative;
-      font-size: 24px;
-      font-weight: 500;
-      color: #333;
-  }
-
-  .forms .form-content .title:before {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 3px;
-      width: 25px;
-      background: #7d2ae8;
-  }
-
-  .forms .signup-form .title:before {
-      width: 20px;
-  }
-
-  .forms .form-content .input-boxes {
-      margin-top: 30px;
-  }
-
-  .forms .form-content .input-box {
-      display: flex;
-      align-items: center;
-      height: 50px;
-      width: 100%;
-      margin: 10px 0;
-      position: relative;
-  }
-
-  .form-content .input-box input {
-      height: 100%;
-      width: 100%;
-      outline: none;
-      border: none;
-      padding: 0 30px;
-      font-size: 16px;
-      font-weight: 500;
-      border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-  }
-
-  .form-content .input-box input:focus,
-  .form-content .input-box input:valid {
-      border-color: #7d2ae8;
-  }
-
-  .form-content .input-box i {
-      position: absolute;
-      color: #7d2ae8;
-      font-size: 17px;
-  }
-
-  .forms .form-content .text {
-      font-size: 14px;
-      font-weight: 500;
-      color: #333;
-  }
-
-  .forms .form-content .text a {
-      text-decoration: none;
-  }
-
-  .forms .form-content .text a:hover {
-      text-decoration: underline;
-  }
-
-  .forms .form-content .button {
-      color: #fff;
-      margin-top: 40px;
-  }
-
-  .forms .form-content .button input {
-      color: #fff;
-      background: #7d2ae8;
-      border-radius: 6px;
-      padding: 0;
-      cursor: pointer;
-      transition: all 0.4s ease;
-  }
-
-  .forms .form-content .button input:hover {
-      background: #5b13b9;
-  }
-
-  .forms .form-content label {
-      color: #5b13b9;
-      cursor: pointer;
-  }
-
-  .forms .form-content label:hover {
-      text-decoration: underline;
-  }
-
-  .forms .form-content .login-text,
-  .forms .form-content .sign-up-text {
-      text-align: center;
-      margin-top: 25px;
-  }
-
-  .container #flip {
-      display: none;
-  }
-
-  @media (max-width: 730px) {
-      .container .cover {
-          display: none;
-      }
-      .form-content .login-form,
-      .form-content .signup-form {
-          width: 100%;
-      }
-      .form-content .signup-form {
-          display: none;
-      }
-      .container #flip:checked ~ .forms .signup-form {
-          display: block;
-      }
-      .container #flip:checked ~ .forms .login-form {
-          display: none;
-      }
-  }
-}
+  

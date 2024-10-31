@@ -1,68 +1,69 @@
-.catalog{
-  .card {
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: none;
-    border-radius: 10px;
-
-    &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .price {
-        font-weight: bold;
-        color: #28a745; // Зеленый цвет для цены
-        font-size: 1.25rem;
-    }
-
-    .rating {
-        margin-top: 10px;
-    }
-
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-
+// catalog
+.catalog {
+    .card {
+      transition: transform 0.2s, box-shadow 0.2s; /* Плавный переход для трансформации и тени */
+      border: none; /* Убираем рамку у карточки */
+      border-radius: 10px; /* Закругление углов карточки */
+  
+      &:hover {
+        transform: scale(1.05); /* Увеличение карточки при наведении */
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Тень при наведении */
+      }
+  
+      .price {
+        font-weight: bold; /* Жирный шрифт для цены */
+        color: #28a745; /* Цвет текста для цены */
+        font-size: 1.25rem; /* Размер шрифта для цены */
+      }
+  
+      .rating {
+        margin-top: 10px; /* Отступ сверху для рейтинга */
+      }
+  
+      ul {
+        margin: 0; /* Убираем отступы для списка */
+        padding: 0; /* Убираем внутренние отступы для списка */
+        list-style: none; /* Убираем маркеры у списка */
+  
         li {
-            margin: 5px 0;
-            i {
-                color: #007bff; // Цвет иконок
-                margin-right: 5px;
-            }
+          margin: 5px 0; /* Отступы для пунктов списка */
+          
+          i {
+            color: #007bff; /* Цвет иконок в списке */
+            margin-right: 5px; /* Отступ справа для иконок */
+          }
         }
+      }
     }
-}
-
-.card-img-top {
-    height: 200px; // Установите фиксированную высоту
-    object-fit: cover; // Сохранение пропорций
-}
-
-h1 {
-    font-family: 'Titillium Web', sans-serif;
-    font-weight: 600;
-    color: #343a40;
-}
-
-.btn-primary {
-    background-color: #007bff;
-    border: none;
-
-    &:hover {
-        background-color: #0056b3;
+  
+    .card-img-top {
+      height: 200px; /* Высота изображения карточки */
+      object-fit: cover; /* Обеспечиваем обрезку изображения по размеру карточки */
     }
-}
-
-.btn-outline-secondary {
-    color: #007bff;
-    border-color: #007bff;
-
-    &:hover {
-        background-color: #007bff;
-        color: white;
+  
+    h1 {
+      font-family: 'Titillium Web', sans-serif; /* Шрифт для заголовка */
+      font-weight: 600; /* Жирность шрифта для заголовка */
+      color: #343a40; /* Цвет текста для заголовка */
     }
-}
-
-
-}
+  
+    .btn-primary {
+      background-color: #007bff; /* Цвет фона для основной кнопки */
+      border: none; /* Убираем рамку у кнопки */
+  
+      &:hover {
+        background-color: #0056b3; /* Цвет фона при наведении на основную кнопку */
+      }
+    }
+  
+    .btn-outline-secondary {
+      color: #007bff; /* Цвет текста для вторичной кнопки */
+      border-color: #007bff; /* Цвет рамки для вторичной кнопки */
+  
+      &:hover {
+        background-color: #007bff; /* Цвет фона при наведении на вторичную кнопку */
+        color: white; /* Цвет текста при наведении на вторичную кнопку */
+      }
+    }
+  }
+  

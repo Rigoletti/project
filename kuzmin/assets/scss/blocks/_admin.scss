@@ -1,91 +1,86 @@
-$primary-color: #007bff;
-$card-bg: #ffffff;
-$card-shadow: rgba(0, 0, 0, 0.1);
-$card-hover-shadow: rgba(0, 0, 0, 0.2);
-$border-radius: 0.5rem;
-
-.admin{
- .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-.card {
-    background-color: $card-bg;
-    border: none;
-    border-radius: $border-radius;
-    box-shadow: 0 2px 5px $card-shadow;
-    transition: box-shadow 0.3s ease;
-
-    &:hover {
-        box-shadow: 0 4px 10px $card-hover-shadow;
+.admin {
+    .container {
+      max-width: 1200px; /* Максимальная ширина контейнера */
+      margin: auto; /* Центрирование контейнера */
+      padding: 20px; /* Внутренние отступы для контейнера */
     }
-
-    .card-img-top {
-        border-top-left-radius: $border-radius;
-        border-top-right-radius: $border-radius;
-        height: 200px;
-        object-fit: cover; 
-    }
-
-    .card-body {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%; 
-        padding: 15px;
-
+  
+    .card {
+      background-color: $card-bg; /* Цвет фона карточки */
+      border: none; /* Убираем рамку у карточки */
+      border-radius: $border-radius; /* Закругление углов карточки */
+      box-shadow: 0 2px 5px $card-shadow; /* Тень для карточки */
+      transition: box-shadow 0.3s ease; /* Плавный переход для тени при наведении */
+  
+      &:hover {
+        box-shadow: 0 4px 10px $card-hover-shadow; /* Увеличение тени при наведении */
+      }
+  
+      .card-img-top {
+        border-top-left-radius: $border-radius; /* Закругление верхнего левого угла изображения */
+        border-top-right-radius: $border-radius; /* Закругление верхнего правого угла изображения */
+        height: 200px; /* Высота изображения карточки */
+        object-fit: cover; /* Обеспечиваем обрезку изображения по размеру карточки */
+      }
+  
+      .card-body {
+        display: flex; /* Используем Flexbox для расположения элементов */
+        flex-direction: column; /* Расположение элементов в колонку */
+        justify-content: space-between; /* Распределение пространства между элементами */
+        height: 100%; /* Высота карточки */
+        padding: 15px; /* Внутренние отступы для содержимого карточки */
+  
         .card-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 10px;
+          font-size: 1.25rem; /* Размер шрифта для заголовка карточки */
+          font-weight: bold; /* Жирность шрифта для заголовка карточки */
+          margin-bottom: 10px; /* Отступ снизу для заголовка карточки */
         }
-
+  
         .card-text {
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            color: #555;
+          font-size: 0.9rem; /* Размер шрифта для текста карточки */
+          margin-bottom: 15px; /* Отступ снизу для текста карточки */
+          color: #555; /* Цвет текста карточки */
         }
-
+  
         .price {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: $primary-color;
-            margin-bottom: 10px;
+          font-size: 1.1rem; /* Размер шрифта для цены */
+          font-weight: bold; /* Жирность шрифта для цены */
+          color: $primary-color; /* Цвет текста для цены */
+          margin-bottom: 10px; /* Отступ снизу для цены */
         }
-
+  
         .rating {
-            margin-bottom: 15px;
+          margin-bottom: 15px; /* Отступ снизу для рейтинга */
         }
-
+  
         .buttons {
-            display: flex;
-            justify-content: space-between; 
-            margin-top: auto;
+          display: flex; /* Используем Flexbox для расположения кнопок */
+          justify-content: space-between; /* Распределение кнопок по краям */
+          margin-top: auto; /* Автоматический отступ сверху для кнопок */
         }
+      }
     }
-}
-
-.form-group {
-    margin-bottom: 15px;
-
-    label {
-        font-weight: bold;
-    }
-
-    input, textarea {
-        border-radius: $border-radius;
-        border: 1px solid #ccc;
+  
+    .form-group {
+      margin-bottom: 15px; /* Отступ снизу для группы форм */
+      
+      label {
+        font-weight: bold; /* Жирность шрифта для меток */
+      }
+  
+      input, textarea {
+        border-radius: $border-radius; /* Закругление углов для полей ввода */
+        border: 1px solid #ccc; /* Рамка для полей ввода */
+  
         &:focus {
-            border-color: $primary-color;
-            box-shadow: 0 0 5px $primary-color;
+          border-color: $primary-color; /* Цвет рамки при фокусе */
+          box-shadow: 0 0 5px $primary-color; /* Тень при фокусе */
         }
+      }
     }
-}
-
-h1, h5 {
-    text-align: center;
-} 
-}
-
+  
+    h1, h5 {
+      text-align: center; /* Центрирование заголовков */
+    }
+  }
+  
