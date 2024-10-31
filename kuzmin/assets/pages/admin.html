@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Админ панель</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/main.css"> 
+</head>
+<body>
+  <div class="admin">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Админ панель</h1>
+        
+        <form id="roomForm" class="mb-4">
+            <h5>Добавить новый номер</h5>
+            <div class="form-group">
+                <label for="title">Название номера</label>
+                <input type="text" class="form-control" id="title" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Описание</label>
+                <textarea class="form-control" id="description" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">Цена (в рублях)</label>
+                <input type="number" class="form-control" id="price" required>
+            </div>
+            <div class="form-group">
+                <label for="stars">Оценка (звезды)</label>
+                <input type="number" class="form-control" id="stars" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Ссылка на изображение</label>
+                <input type="text" class="form-control" id="image" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Добавить номер</button>
+        </form>
+
+        <h5>Существующие номера</h5>
+        <div id="roomList" class="row">
+        </div>
+    </div>
+  </div>
+    
+
+    <script>
+        const roomList = document.getElementById('roomList');
+        const roomForm = document.getElementById('roomForm');
+
+        let rooms = [
+            {
+                title: "Номер с джакузи",
+                description: "Уютный номер с джакузи и великолепным видом на город.",
+                price: 7000,
+                stars: 4,
+                image: "../img/nomer1.jpg"
+            },
+            {
+                title: "Люкс с сауной",
+                description: "Просторный люкс с сауной и отдельной зоной для отдыха.",
+                price: 10000,
+                stars: 5,
+                image: "../img/nomer2.jpg"
+            },
+            {
+                title: "Стандартный номер",
+                description: "Комфортабельный стандартный номер для двоих.",
+                price: 5000,
+                stars: 3,
+                image: "../img/room3.jpg"
+            },
+            {
+                title: "Номер с балконом",
+                description: "Номер с балконом и видом на парк.",
+                price: 6000,
+                stars: 4,
+                image: "../img/room4.jpg"
+            },
+            {
+                title: "Супер люкс",
+                description: "Элегантный номер с высококачественными удобствами.",
+                price: 15000,
+                stars: 5,
+                image: "../img/room5.jpg"
+            },
+            {
+                title: "Номер для молодоженов",
+                description: "Романтическая атмосфера для вашего незабываемого отдыха.",
+                price: 8000,
+                stars: 5,
+                image: "../img/room6.jpeg"
+            },
+            {
+                title: "Номер для деловых людей",
+                description: "Идеально подходит для деловых поездок с рабочей зоной.",
+                price: 9000,
+                stars: 4,
+                image: "../img/room7.jpg"
+            },
+            {
+                title: "Номер с панорамным видом",
+                description: "Насладитесь панорамным видом на город из вашего номера.",
+                price: 12000,
+                stars: 5,
+                image: "../img/room8.jpg"
+            }
+        ];
+
+        function displayRooms() {
+            roomList.innerHTML = '';
+            rooms.forEach((room, index) => {
+                const card = document.createElement('div');
+                card.className = `col-md-4 mb-4`;
+                card.innerHTML = `
+                    <div class="card shadow-sm">
+                        <img src="${room.image}" class="card-img-top" alt="${room.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${room.title}</h5>
+                            <p class="card-text">${room.description}</p>
+                            <p class="price">${room.price} р/сутки</p>
+                            <div class="rating mb-2">
+                                <span class="badge bg-warning text-dark">${'★'.repeat(room.stars)}${'☆'.repeat(5 - room.stars)}</span>
+                            </div>
+                            <div class="buttons">
+                                <button class="btn btn-danger" onclick="deleteRoom(${index})">Удалить</button>
+                                <button class="btn btn-secondary" onclick="editRoom(${index})">Изменить</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                roomList.appendChild(card);
+            });
+        }
+
+        roomForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newRoom = {
+                title: document.getElementById('title').value,
+                description: document.getElementById('description').value,
+                price: Number(document.getElementById('price').value),
+                stars: Number(document.getElementById('stars').value),
+                image: document.getElementById('image').value
+            };
+            rooms.push(newRoom);
+            roomForm.reset();
+            displayRooms();
+        });
+
+        function deleteRoom(index) {
+            rooms.splice(index, 1);
+            displayRooms();
+        }
+
+        function editRoom(index) {
+            const room = rooms[index];
+            document.getElementById('title').value = room.title;
+            document.getElementById('description').value = room.description;
+            document.getElementById('price').value = room.price;
+            document.getElementById('stars').value = room.stars;
+            document.getElementById('image').value = room.image;
+            deleteRoom(index);
+        }
+        displayRooms();
+    </script>
+</body>
+</html>

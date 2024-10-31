@@ -1,0 +1,91 @@
+$primary-color: #007bff;
+$card-bg: #ffffff;
+$card-shadow: rgba(0, 0, 0, 0.1);
+$card-hover-shadow: rgba(0, 0, 0, 0.2);
+$border-radius: 0.5rem;
+
+.admin{
+ .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background-color: $card-bg;
+    border: none;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 5px $card-shadow;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 4px 10px $card-hover-shadow;
+    }
+
+    .card-img-top {
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: $border-radius;
+        height: 200px;
+        object-fit: cover; 
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%; 
+        padding: 15px;
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: $primary-color;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            margin-bottom: 15px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between; 
+            margin-top: auto;
+        }
+    }
+}
+
+.form-group {
+    margin-bottom: 15px;
+
+    label {
+        font-weight: bold;
+    }
+
+    input, textarea {
+        border-radius: $border-radius;
+        border: 1px solid #ccc;
+        &:focus {
+            border-color: $primary-color;
+            box-shadow: 0 0 5px $primary-color;
+        }
+    }
+}
+
+h1, h5 {
+    text-align: center;
+} 
+}
+
