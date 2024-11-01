@@ -1,918 +1,911 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 header {
-  position: relative;
+  position: relative; /* Относительное позиционирование для header */
 }
 
 header a {
-  color: white;
-  text-decoration: none;
+  color: white; /* Цвет ссылок в header */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
 }
 
 .vhod {
-  margin-left: 10px;
+  margin-left: 10px; /* Отступ слева для элемента входа */
 }
 
 .header1 {
-  background-color: #22275F;
-  color: white;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
+  background-color: #22275F; /* Темно-синий фон для первого заголовка */
+  color: white; /* Цвет текста в заголовке */
+  height: 50px; /* Высота заголовка */
+  display: flex; /* Используем flexbox для размещения содержимого */
+  align-items: center; /* Центрирование элементов по вертикали */
+  flex-wrap: nowrap; /* Запрещаем перенос элементов на новую строку */
 }
 
 .header1 section {
-  display: flex;
-  align-items: center;
-  width: 100%;
+  display: flex; /* Flex-контейнер для размещения элементов внутри секции */
+  align-items: center; /* Центрирование элементов по вертикали */
+  width: 100%; /* Ширина секции 100% */
 }
 
 .header1 .phone, .header1 .email, .header1 .vhod {
-  display: flex;
-  align-items: center;
-  margin-right: 20px;
+  display: flex; /* Flex-контейнер для размещения элементов */
+  align-items: center; /* Центрирование элементов по вертикали */
+  margin-right: 20px; /* Отступ справа для элементов */
 }
 
 .header2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
+  display: flex; /* Flex-контейнер для размещения элементов второго заголовка */
+  justify-content: space-between; /* Распределение элементов с равными промежутками */
+  align-items: center; /* Центрирование элементов по вертикали */
+  padding: 10px 20px; /* Внутренние отступы для второго заголовка */
 }
 
 .header2 .logo img {
-  height: 40px;
+  height: 40px; /* Высота логотипа */
 }
 
 .navigation {
-  display: flex;
+  display: flex; /* Flex-контейнер для навигационных ссылок */
 }
 
 .navigation a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: rgb(8, 8, 8);
+  margin-left: 20px; /* Отступ слева для навигационных ссылок */
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
+  color: rgb(8, 8, 8); /* Цвет навигационных ссылок */
 }
 
 .burger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
+  display: none; /* Скрываем бургер-меню по умолчанию */
+  flex-direction: column; /* Вертикальная ориентация элементов бургер-меню */
+  cursor: pointer; /* Указатель курсора при наведении */
 }
 
 .burger div {
-  width: 30px;
-  height: 3px;
-  background-color: white;
-  margin: 4px 0;
-  transition: 0.4s;
+  width: 30px; /* Ширина полосок бургер-меню */
+  height: 3px; /* Высота полосок бургер-меню */
+  background-color: white; /* Цвет полосок бургер-меню */
+  margin: 4px 0; /* Отступы между полосками */
+  transition: 0.4s; /* Плавный переход для анимации бургер-меню */
 }
 
 /* Адаптивные стили */
 @media (max-width: 768px) {
   .header1 {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Вертикальная ориентация элементов в заголовке на маленьких экранах */
+    align-items: flex-start; /* Выравнивание элементов по левому краю */
   }
   .header1 section {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Вертикальная ориентация элементов в секции на маленьких экранах */
+    align-items: flex-start; /* Выравнивание элементов по левому краю */
   }
   .header2 {
-    flex-direction: row;
-    align-items: center;
+    flex-direction: row; /* Горизонтальная ориентация элементов второго заголовка */
+    align-items: center; /* Центрирование элементов по вертикали */
   }
   .navigation {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    background-color: #22275F;
-    width: 100%;
-    top: 50px;
-    left: 0;
-    z-index: 10;
+    display: none; /* Скрываем навигацию по умолчанию на маленьких экранах */
+    flex-direction: column; /* Вертикальная ориентация навигационных ссылок */
+    position: absolute; /* Абсолютное позиционирование для навигации */
+    background-color: #22275F; /* Темно-синий фон для навигации */
+    width: 100%; /* Ширина навигации 100% */
+    top: 50px; /* Расположение навигации ниже заголовка */
+    left: 0; /* Прикрепляем к левой стороне */
+    z-index: 10; /* Устанавливаем уровень наложения */
   }
   .navigation.active {
-    display: flex;
+    display: flex; /* Показываем навигацию при активном состоянии */
   }
   .burger {
-    display: flex;
-    margin-left: auto;
+    display: flex; /* Показываем бургер-меню на маленьких экранах */
+    margin-left: auto; /* Автоматический отступ слева для выравнивания */
   }
   .header2 .logo {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Отступ снизу для логотипа */
   }
   .navigation a {
-    color: white;
-    margin: 10px 0;
+    color: white; /* Цвет навигационных ссылок на маленьких экранах */
+    margin: 10px 0; /* Вертикальные отступы для навигационных ссылок */
   }
 }
 .footer {
-  font-size: 24px;
-  background-color: #0c0c0c;
-  padding: 20px 0;
+  font-size: 24px; /* Размер шрифта для футера */
+  background-color: #0c0c0c; /* Цвет фона футера */
+  padding: 20px 0; /* Внутренние отступы для футера */
+  /* Цвет подсказок для социальных иконок при наведении */
+  /* Цвет фона социальных иконок при наведении */
+  /* Адаптивные стили для экранов шириной до 768px */
+  /* Адаптивные стили для экранов шириной до 480px */
 }
 .footer a {
-  color: #494747;
+  color: #494747; /* Цвет ссылок в футере */
 }
 .footer button {
-  width: 200px;
-  height: 50px;
+  width: 200px; /* Ширина кнопок в футере */
+  height: 50px; /* Высота кнопок в футере */
 }
 .footer input {
-  height: 50px;
-  width: 400px;
-  max-width: 100%;
-  padding: 0 15px;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-.footer input::-moz-placeholder {
-  color: #999;
-  opacity: 1;
-  padding-left: 10px;
-}
-.footer input::placeholder {
-  color: #999;
-  opacity: 1;
-  padding-left: 10px;
+  height: 5vh; /* Высота поля ввода */
+  width: 100%; /* Устанавливаем ширину на 100% */
+  max-width: 600px; /* Максимальная ширина поля ввода */
+  padding: 0.5rem; /* Внутренние отступы */
+  font-size: 1rem; /* Размер шрифта */
+  margin: 0 auto 1rem; /* Центрирование и отступ снизу */
+  box-sizing: border-box; /* Учитываем отступы и границы в ширине */
+  border: 1px solid #ccc; /* Граница поля ввода */
+  border-radius: 4px; /* Закругление углов */
 }
 .footer .btn {
-  display: block;
-  text-align: center;
-  cursor: pointer;
-  text-transform: uppercase;
-  outline: none;
-  overflow: hidden;
-  position: relative;
-  color: #fff;
-  font-weight: 700;
-  font-size: 15px;
-  background-color: #222;
-  padding: 17px 60px;
-  margin: 0 auto;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  display: block; /* Отображение кнопки как блочный элемент */
+  text-align: center; /* Центрирование текста внутри кнопки */
+  cursor: pointer; /* Указатель курсора при наведении */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  outline: none; /* Убираем контур при фокусе */
+  overflow: hidden; /* Скрываем переполнение содержимого */
+  position: relative; /* Относительное позиционирование для эффекта */
+  color: #fff; /* Цвет текста кнопки */
+  font-weight: 700; /* Жирный шрифт для текста кнопки */
+  font-size: 15px; /* Размер шрифта для кнопки */
+  background-color: #222; /* Цвет фона кнопки */
+  padding: 17px 60px; /* Внутренние отступы для кнопки */
+  margin: 0 auto; /* Центрирование кнопки */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Тень для кнопки */
 }
 .footer .btn span {
-  position: relative;
-  z-index: 1;
+  position: relative; /* Относительное позиционирование для текста внутри кнопки */
+  z-index: 1; /* Уровень наложения для текста кнопки */
 }
 .footer .btn:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 490%;
-  width: 140%;
-  background: #78c7d2;
-  transition: all 0.5s ease-in-out;
-  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  content: ""; /* Псевдоэлемент для эффекта кнопки */
+  position: absolute; /* Абсолютное позиционирование для эффекта */
+  left: 0; /* Прикрепляем к левой стороне */
+  top: 0; /* Прикрепляем к верхней стороне */
+  height: 490%; /* Высота эффекта */
+  width: 140%; /* Ширина эффекта */
+  background: #78c7d2; /* Цвет эффекта */
+  transition: all 0.5s ease-in-out; /* Плавный переход для эффекта */
+  transform: translateX(-98%) translateY(-25%) rotate(45deg); /* Начальная трансформация */
 }
 .footer .btn:hover:after {
-  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg); /* Трансформация при наведении */
 }
 .footer .link {
-  font-size: 20px;
-  margin-top: 30px;
+  font-size: 20px; /* Размер шрифта для ссылок в футере */
+  margin-top: 30px; /* Отступ сверху для ссылок */
 }
 .footer .zakaz_zvonka {
-  background-color: #91B5E3;
-  color: white;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  margin-top: -80px;
-  text-align: center;
+  background-color: #91B5E3; /* Цвет фона секции заказа звонка */
+  color: white; /* Цвет текста в секции заказа звонка */
+  width: 100%; /* Уменьшаем ширину секции заказа звонка до 80% */
+  display: flex; /* Flex-контейнер для размещения элементов */
+  flex-direction: column; /* Вертикальная ориентация элементов */
+  justify-content: center; /* Центрирование элементов по вертикали */
+  align-items: center; /* Центрирование элементов по горизонтали */
+  padding: 20px; /* Внутренние отступы для секции заказа звонка */
+  margin-top: -80px; /* Отрицательный отступ сверху */
+  text-align: center; /* Центрирование текста */
 }
 .footer .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  color: white;
-  flex-wrap: wrap;
-  margin-top: 60px;
+  display: flex; /* Flex-контейнер для размещения элементов */
+  justify-content: space-between; /* Распределение элементов с равными промежутками */
+  align-items: flex-start; /* Выравнивание элементов по верхнему краю */
+  color: white; /* Цвет текста в контейнере */
+  flex-wrap: wrap; /* Перенос элементов на новую строку при необходимости */
+  margin-top: 60px; /* Отступ сверху для контейнера */
 }
 .footer .wrapper {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-  flex-wrap: wrap;
+  display: flex; /* Flex-контейнер для размещения элементов */
+  justify-content: center; /* Центрирование элементов по горизонтали */
+  margin-top: 20px; /* Отступ сверху для обертки */
+  flex-wrap: wrap; /* Перенос элементов на новую строку при необходимости */
 }
 .footer .wrapper .icon {
-  position: relative;
-  background: #ffffff;
-  border-radius: 50%;
-  padding: 15px;
-  margin: 10px;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative; /* Относительное позиционирование для иконок */
+  background: #ffffff; /* Цвет фона иконок */
+  border-radius: 50%; /* Закругление углов иконок */
+  padding: 15px; /* Внутренние отступы для иконок */
+  margin: 10px; /* Отступы между иконками */
+  width: 50px; /* Ширина иконок */
+  height: 50px; /* Высота иконок */
+  display: flex; /* Flex-контейнер для размещения содержимого иконок */
+  justify-content: center; /* Центрирование содержимого иконок */
+  align-items: center; /* Центрирование содержимого иконок */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); /* Тень для иконок */
+  cursor: pointer; /* Указатель курсора при наведении */
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Плавный переход для иконок */
 }
 .footer .wrapper .tooltip {
-  position: absolute;
-  top: 0;
-  font-size: 14px;
-  background: #ffffff;
-  padding: 5px 8px;
-  border-radius: 5px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: absolute; /* Абсолютное позиционирование для подсказок */
+  top: 0; /* Расположение подсказки сверху */
+  font-size: 14px; /* Размер шрифта для подсказок */
+  background: #ffffff; /* Цвет фона подсказок */
+  padding: 5px 8px; /* Внутренние отступы для подсказок */
+  border-radius: 5px; /* Закругление углов подсказок */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); /* Тень для подсказок */
+  opacity: 0; /* Непрозрачность подсказок по умолчанию */
+  pointer-events: none; /* Отключаем события указателя для подсказок */
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Плавный переход для подсказок */
 }
 .footer .wrapper .tooltip::before {
-  position: absolute;
-  content: "";
-  height: 8px;
-  width: 8px;
-  background: #ffffff;
-  bottom: -3px;
-  left: 50%;
-  transform: translate(-50%) rotate(45deg);
+  position: absolute; /* Абсолютное позиционирование для треугольника подсказки */
+  content: ""; /* Псевдоэлемент для треугольника */
+  height: 8px; /* Высота треугольника */
+  width: 8px; /* Ширина треугольника */
+  background: #ffffff; /* Цвет фона треугольника */
+  bottom: -3px; /* Расположение треугольника снизу */
+  left: 50%; /* Центрирование треугольника по горизонтали */
+  transform: translate(-50%) rotate(45deg); /* Поворот треугольника */
 }
 .footer .wrapper .icon:hover .tooltip {
-  top: -45px;
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+  top: -45px; /* Расположение подсказки при наведении */
+  opacity: 1; /* Полная непрозрачность подсказки при наведении */
+  visibility: visible; /* Видимость подсказки при наведении */
+  pointer-events: auto; /* Включаем события указателя для подсказки */
 }
 .footer .wrapper .icon:hover span,
 .footer .wrapper .icon:hover .tooltip {
-  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1); /* Тень текста при наведении */
 }
 .footer .wrapper .facebook:hover .tooltip,
 .footer .wrapper .twitter:hover .tooltip,
 .footer .wrapper .instagram:hover .tooltip,
 .footer .wrapper .github:hover .tooltip,
 .footer .wrapper .youtube:hover .tooltip {
-  color: #ec0000;
+  color: #ec0000; /* Цвет подсказки при наведении */
 }
 .footer .wrapper .facebook:hover {
-  background: #1877F2;
+  background: #1877F2; /* Цвет фона для Facebook */
 }
 .footer .wrapper .twitter:hover {
-  background: #1DA1F2;
+  background: #1DA1F2; /* Цвет фона для Twitter */
 }
 .footer .wrapper .instagram:hover {
-  background: #E4405F;
+  background: #E4405F; /* Цвет фона для Instagram */
 }
 .footer .wrapper .github:hover {
-  background: #a3a1a1;
+  background: #a3a1a1; /* Цвет фона для GitHub */
 }
 .footer .wrapper .youtube:hover {
-  background: #CD201F;
+  background: #CD201F; /* Цвет фона для YouTube */
 }
 @media (max-width: 768px) {
   .footer .footer {
-    font-size: 18px;
+    font-size: 18px; /* Уменьшаем размер шрифта футера */
   }
   .footer .footer .zakaz_zvonka {
-    width: 90%;
-    padding: 15px;
+    width: 90%; /* Ширина секции заказа звонка на маленьких экранах */
+    padding: 15px; /* Внутренние отступы для секции заказа звонка */
   }
   .footer .footer .container {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Вертикальная ориентация элементов в контейнере */
+    align-items: center; /* Центрирование элементов по горизонтали */
   }
   .footer .footer input {
-    width: 90%;
-    max-width: none;
+    width: 90%; /* Ширина полей ввода на маленьких экранах */
+    max-width: none; /* Убираем ограничение ширины для полей ввода */
   }
   .footer .footer .wrapper {
-    margin-left: 0;
-    justify-content: center;
+    margin-left: 0; /* Убираем отступ слева для обертки */
+    justify-content: center; /* Центрирование элементов в обертке */
   }
 }
 @media (max-width: 480px) {
   .footer .footer {
-    font-size: 16px;
+    font-size: 16px; /* Уменьшаем размер шрифта футера */
   }
   .footer .footer .link {
-    font-size: 16px;
+    font-size: 16px; /* Уменьшаем размер шрифта для ссылок в футере */
   }
   .footer .footer .wrapper .icon {
-    width: 40px;
-    height: 40px;
-    padding: 10px;
+    width: 40px; /* Уменьшаем ширину иконок */
+    height: 40px; /* Уменьшаем высоту иконок */
+    padding: 10px; /* Уменьшаем внутренние отступы для иконок */
   }
 }
 .footer .companiya {
-  max-width: 400px;
+  max-width: 400px; /* Максимальная ширина для секции компании */
 }
 .footer .companiya .zag {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Размер заголовка в секции компании */
 }
 .footer .companiya .line {
-  height: 2px;
-  background-color: #78b2f5;
-  margin-bottom: 1rem;
-  width: 60px;
+  height: 2px; /* Высота линии под заголовком */
+  background-color: #78b2f5; /* Цвет линии */
+  margin-bottom: 1rem; /* Отступ снизу для линии */
+  width: 60px; /* Ширина линии */
 }
 .footer .companiya .text {
-  font-size: 0.9rem;
-  line-height: 1.3;
-  display: flex;
-  flex-direction: column;
+  font-size: 0.9rem; /* Размер шрифта для текста в секции компании */
+  line-height: 1.3; /* Межстрочный интервал для текста */
+  display: flex; /* Flex-контейнер для размещения текста */
+  flex-direction: column; /* Вертикальная ориентация текста */
 }
 .footer .companiya .text p {
-  margin: 0;
-  margin-bottom: 0.2rem;
+  margin: 0; /* Убираем отступы для абзацев */
+  margin-bottom: 0.2rem; /* Отступ снизу для абзацев */
 }
 .footer .top_predlojeniya .zag {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Размер заголовка в секции предложений */
 }
 .footer .top_predlojeniya .line {
-  height: 2px;
-  background-color: #78b2f5;
-  margin-bottom: 1rem;
-  width: 60px;
+  height: 2px; /* Высота линии под заголовком */
+  background-color: #78b2f5; /* Цвет линии */
+  margin-bottom: 1rem; /* Отступ снизу для линии */
+  width: 60px; /* Ширина линии */
 }
 .footer .top_predlojeniya .cards {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1rem;
+  display: flex; /* Flex-контейнер для размещения карточек */
+  flex-direction: column; /* Вертикальная ориентация карточек */
+  margin-top: 1rem; /* Отступ сверху для карточек */
 }
 .footer .top_predlojeniya .card1, .footer .top_predlojeniya .card2, .footer .top_predlojeniya .card3 {
-  display: flex;
-  max-width: 750px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 1rem;
-  margin-bottom: 0.5rem;
-  align-items: center;
-  cursor: pointer;
+  display: flex; /* Flex-контейнер для размещения содержимого карточек */
+  max-width: 750px; /* Максимальная ширина карточек */
+  border: 1px solid #ccc; /* Рамка для карточек */
+  border-radius: 5px; /* Закругление углов карточек */
+  padding: 1rem; /* Внутренние отступы для карточек */
+  margin-bottom: 0.5rem; /* Отступ снизу для карточек */
+  align-items: center; /* Центрирование содержимого карточек по вертикали */
+  cursor: pointer; /* Указатель курсора при наведении на карточки */
 }
 .footer .top_predlojeniya .card1 img, .footer .top_predlojeniya .card2 img, .footer .top_predlojeniya .card3 img {
-  max-width: 100px;
-  height: auto;
-  margin-right: 1rem;
+  max-width: 100px; /* Максимальная ширина изображений в карточках */
+  height: auto; /* Автоматическая высота для изображений */
+  margin-right: 1rem; /* Отступ справа для изображений */
 }
 .footer .top_predlojeniya .card1 .details, .footer .top_predlojeniya .card2 .details, .footer .top_predlojeniya .card3 .details {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex: 1;
+  display: flex; /* Flex-контейнер для размещения деталей карточек */
+  flex-direction: column; /* Вертикальная ориентация для деталей карточек */
+  justify-content: flex-start; /* Выравнивание деталей по верхнему краю */
+  flex: 1; /* Увеличиваем гибкость для деталей карточек */
 }
 .footer .top_predlojeniya .card1 .nomer, .footer .top_predlojeniya .card2 .nomer, .footer .top_predlojeniya .card3 .nomer {
-  font-size: 1rem;
-  margin: 0;
+  font-size: 1rem; /* Размер шрифта для номера карточки */
+  margin: 0; /* Убираем отступы для номера карточки */
 }
 .footer .top_predlojeniya .card1 .price, .footer .top_predlojeniya .card2 .price, .footer .top_predlojeniya .card3 .price {
-  font-size: 0.9rem;
-  color: #34B1FF;
-  margin-top: 0.5rem;
+  font-size: 0.9rem; /* Размер шрифта для цены карточки */
+  color: #34B1FF; /* Цвет текста для цены карточки */
+  margin-top: 0.5rem; /* Отступ сверху для цены карточки */
 }
 
 .nasha_gostinica {
-  text-align: center;
-  margin-top: 32px;
+  text-align: center; /* Центрирование текста в секции */
+  margin-top: 32px; /* Отступ сверху для секции */
 }
 .nasha_gostinica .cards {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
+  margin-top: 50px; /* Отступ сверху для контейнера карточек */
+  display: flex; /* Используем flexbox для размещения карточек */
+  justify-content: space-between; /* Распределение карточек с равными промежутками */
+  flex-wrap: wrap; /* Оборачиваем карточки на следующую строку при нехватке места */
+  gap: 10px; /* Промежуток между карточками */
 }
 .nasha_gostinica .cards a {
-  text-decoration: none;
+  text-decoration: none; /* Убираем подчеркивание у ссылок */
 }
 .nasha_gostinica .cards .card, .nasha_gostinica .cards .card2, .nasha_gostinica .cards .card3, .nasha_gostinica .cards .card4 {
-  background-size: cover;
-  background-position: center;
-  width: 240px;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  background-color: #fff;
-  transition: background-color 0.3s ease;
-  margin: 0;
-  box-sizing: border-box;
+  background-size: cover; /* Заполнение фона карточки */
+  background-position: center; /* Центрирование фона */
+  width: 240px; /* Ширина карточки */
+  height: 300px; /* Высота карточки */
+  display: flex; /* Flex-контейнер для внутреннего содержимого карточки */
+  flex-direction: column; /* Вертикальная ориентация содержимого */
+  justify-content: space-between; /* Распределение содержимого по вертикали */
+  position: relative; /* Относительное позиционирование для дочерних элементов */
+  background-color: #fff; /* Белый фон карточки */
+  transition: background-color 0.3s ease; /* Плавный переход для изменения фона */
+  margin: 0; /* Убираем отступы */
+  box-sizing: border-box; /* Учитываем отступы и границы в ширине и высоте */
 }
 .nasha_gostinica .cards .card .icon, .nasha_gostinica .cards .card2 .icon, .nasha_gostinica .cards .card3 .icon, .nasha_gostinica .cards .card4 .icon {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  position: absolute; /* Абсолютное позиционирование для иконки */
+  top: 10px; /* Отступ сверху */
+  left: 10px; /* Отступ слева */
 }
 .nasha_gostinica .cards .card .text, .nasha_gostinica .cards .card2 .text, .nasha_gostinica .cards .card3 .text, .nasha_gostinica .cards .card4 .text {
-  background-color: #4F84CA;
-  width: 100%;
-  color: white;
-  margin-top: auto;
-  padding: 10px;
-  text-align: center;
-  margin-bottom: 26px;
+  background-color: #4F84CA; /* Фоновый цвет для текстового блока */
+  width: 100%; /* Ширина текстового блока */
+  color: white; /* Цвет текста */
+  margin-top: auto; /* Автоматический отступ сверху для прижатия к низу карточки */
+  padding: 10px; /* Внутренние отступы для текстового блока */
+  text-align: center; /* Центрирование текста */
+  margin-bottom: 26px; /* Отступ снизу для текстового блока */
 }
 .nasha_gostinica .cards .card .hover-text, .nasha_gostinica .cards .card2 .hover-text, .nasha_gostinica .cards .card3 .hover-text, .nasha_gostinica .cards .card4 .hover-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute; /* Абсолютное позиционирование для текста при наведении */
+  top: 0; /* Прикрепляем к верхней части карточки */
+  left: 0; /* Прикрепляем к левой части карточки */
+  width: 100%; /* Ширина блока текста при наведении */
+  height: 100%; /* Высота блока текста при наведении */
+  background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+  color: #fff; /* Цвет текста */
+  padding: 20px; /* Внутренние отступы */
+  opacity: 0; /* Начальная непрозрачность (скрыто) */
+  transition: opacity 0.3s ease; /* Плавный переход для изменения непрозрачности */
+  text-align: center; /* Центрирование текста */
+  display: flex; /* Flex-контейнер для центрирования содержимого */
+  justify-content: center; /* Центрирование по горизонтали */
+  align-items: center; /* Центрирование по вертикали */
 }
 .nasha_gostinica .cards .card:hover, .nasha_gostinica .cards .card2:hover, .nasha_gostinica .cards .card3:hover, .nasha_gostinica .cards .card4:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1); /* Изменение фона при наведении */
 }
 .nasha_gostinica .cards .card:hover .hover-text, .nasha_gostinica .cards .card2:hover .hover-text, .nasha_gostinica .cards .card3:hover .hover-text, .nasha_gostinica .cards .card4:hover .hover-text {
-  opacity: 1;
+  opacity: 1; /* Показ текста при наведении */
 }
 .nasha_gostinica .cards .card {
-  background-image: url(../img/bg.png);
+  background-image: url(../img/bg.png); /* Фоновое изображение для первой карточки */
 }
 .nasha_gostinica .cards .card2 {
-  background-image: url(../img/bg2.png);
+  background-image: url(../img/bg2.png); /* Фоновое изображение для второй карточки */
 }
 .nasha_gostinica .cards .card3 {
-  background-image: url(../img/bg3.png);
+  background-image: url(../img/bg3.png); /* Фоновое изображение для третьей карточки */
 }
 .nasha_gostinica .cards .card4 {
-  background-image: url(../img/bg4.png);
+  background-image: url(../img/bg4.png); /* Фоновое изображение для четвертой карточки */
 }
 
 /* Адаптивные стили */
 @media (max-width: 768px) {
   .nasha_gostinica .cards {
-    justify-content: center;
+    justify-content: center; /* Центрирование карточек на экранах меньше 768px */
   }
   .nasha_gostinica .card, .nasha_gostinica .card2, .nasha_gostinica .card3, .nasha_gostinica .card4 {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
+    width: 100%; /* Ширина карточек 100% */
+    max-width: 300px; /* Максимальная ширина карточек */
+    height: auto; /* Автоматическая высота карточек */
   }
 }
 @media (max-width: 480px) {
   .nasha_gostinica .cards {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* Вертикальная ориентация карточек на экранах меньше 480px */
+    align-items: center; /* Центрирование карточек по горизонтали */
   }
   .nasha_gostinica .card, .nasha_gostinica .card2, .nasha_gostinica .card3, .nasha_gostinica .card4 {
-    width: 90%;
-    height: auto;
+    width: 90%; /* Ширина карточек 90% */
+    height: auto; /* Автоматическая высота карточек */
   }
 }
 .card {
-  width: 100%;
-  border-radius: 10px;
-  margin: 20px 0;
+  width: 100%; /* Ширина карточки */
+  border-radius: 10px; /* Закругление углов карточки */
+  margin: 20px 0; /* Отступы сверху и снизу для карточки */
 }
 .card img {
-  border-radius: 10px 10px 0 0;
-  -o-object-fit: cover;
-     object-fit: cover;
+  border-radius: 10px 10px 0 0; /* Закругление верхних углов изображения */
+  object-fit: cover; /* Обеспечиваем обрезку изображения по размеру карточки */
 }
 
 i.fa-star {
-  color: orangered;
+  color: orangered; /* Цвет иконки звезды */
 }
 
 .btn-group i {
-  color: orangered;
+  color: orangered; /* Цвет иконок в группе кнопок */
 }
 .btn-group button:hover {
-  background-color: orange;
+  background-color: orange; /* Цвет фона кнопки при наведении */
 }
 .btn-group button:hover i.fa-solid {
-  color: black;
+  color: black; /* Цвет иконки при наведении на кнопку */
 }
 
 .card-body h2 {
-  font-size: 1.2em;
-  text-transform: capitalize;
-  margin: 10px 0;
+  font-size: 1.2em; /* Размер шрифта для заголовка карточки */
+  text-transform: capitalize; /* Преобразование текста в заголовке в заглавные буквы */
+  margin: 10px 0; /* Отступы сверху и снизу для заголовка */
 }
 
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-  background: orange;
-  width: 30px;
+  background: orange; /* Цвет активной точки и точки при наведении */
+  width: 30px; /* Ширина активной точки */
 }
 .owl-theme .owl-dots .owl-dot span {
-  width: 15px;
-  height: 15px;
-  background: orangered;
-  transition: all 0.2s ease;
-  margin: 0 5px;
+  width: 15px; /* Ширина точки */
+  height: 15px; /* Высота точки */
+  background: orangered; /* Цвет точки */
+  transition: all 0.2s ease; /* Плавный переход для точки */
+  margin: 0 5px; /* Отступы между точками */
 }
 
 .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev {
-  position: relative;
-  background-color: rgba(255, 166, 0, 0.3);
-  width: 30px;
-  padding: 5px;
-  margin: 0 10px;
+  position: relative; /* Относительное позиционирование для кнопок навигации */
+  background-color: rgba(255, 166, 0, 0.3); /* Цвет фона кнопок навигации */
+  width: 30px; /* Ширина кнопок навигации */
+  padding: 5px; /* Внутренние отступы для кнопок навигации */
+  margin: 0 10px; /* Отступы слева и справа для кнопок навигации */
 }
 .owl-carousel .owl-nav button.owl-next:hover, .owl-carousel .owl-nav button.owl-prev:hover {
-  background-color: orange;
+  background-color: orange; /* Цвет фона кнопок навигации при наведении */
 }
 .owl-carousel .owl-nav button.owl-next::before, .owl-carousel .owl-nav button.owl-prev::before {
-  width: 100%;
-  height: 100%;
-  color: orangered;
+  width: 100%; /* Ширина псевдоэлемента перед кнопкой */
+  height: 100%; /* Высота псевдоэлемента перед кнопкой */
+  color: orangered; /* Цвет псевдоэлемента */
 }
 .owl-carousel .owl-nav button.owl-next.owl-next::before, .owl-carousel .owl-nav button.owl-prev.owl-next::before {
-  content: "\f061";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: 5px;
+  content: "\f061"; /* Иконка "вперед" */
+  font-family: "Font Awesome 5 Free"; /* Шрифт для иконок */
+  font-weight: 900; /* Жирность шрифта для иконок */
+  margin-right: 5px; /* Отступ справа для иконки "вперед" */
 }
 .owl-carousel .owl-nav button.owl-next.owl-prev::before, .owl-carousel .owl-nav button.owl-prev.owl-prev::before {
-  content: "\f060";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  margin-right: 5px;
+  content: "\f060"; /* Иконка "назад" */
+  font-family: "Font Awesome 5 Free"; /* Шрифт для иконок */
+  font-weight: 900; /* Жирность шрифта для иконок */
+  margin-right: 5px; /* Отступ справа для иконки "назад" */
 }
 
 .owl-carousel .owl-nav .owl-next [aria-label=Next],
 .owl-carousel .owl-nav .owl-prev [aria-label=Previous] {
-  visibility: hidden;
+  visibility: hidden; /* Скрываем кнопки навигации по умолчанию */
 }
 
 /* Адаптивные стили */
 @media (max-width: 768px) {
   .card {
-    margin: 10px 0;
+    margin: 10px 0; /* Уменьшаем отступы для карточек на маленьких экранах */
   }
   .card-body h2 {
-    font-size: 1em;
+    font-size: 1em; /* Уменьшаем размер шрифта заголовка на маленьких экранах */
   }
   .btn-group button {
-    width: 100%;
+    width: 100%; /* Ширина кнопок на маленьких экранах */
   }
 }
 .reg {
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin-top: 80px; /* Отступ сверху */
+  margin-bottom: 80px; /* Отступ снизу */
 }
 .reg .container {
-  position: relative;
-  max-width: 850px;
-  width: 100%;
-  background: #fff;
-  padding: 40px 30px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  perspective: 2700px;
+  position: relative; /* Относительное позиционирование */
+  max-width: 850px; /* Максимальная ширина */
+  width: 100%; /* Ширина 100% */
+  background: #fff; /* Фоновый цвет */
+  padding: 40px 30px; /* Внутренние отступы */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Тень */
+  perspective: 2700px; /* Перспектива для 3D */
 }
 .reg .container .cover {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  height: 100%;
-  width: 50%;
-  z-index: 98;
-  transition: all 1s ease;
-  transform-origin: left;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
+  position: absolute; /* Абсолютное позиционирование */
+  top: 0; /* Сверху */
+  left: 50%; /* По центру */
+  height: 100%; /* Высота 100% */
+  width: 50%; /* Ширина 50% */
+  z-index: 98; /* Уровень наложения */
+  transition: all 1s ease; /* Плавный переход */
+  transform-origin: left; /* Точка поворота */
+  transform-style: preserve-3d; /* 3D-эффект */
+  backface-visibility: hidden; /* Скрытие задней стороны */
 }
 .reg .container #flip:checked ~ .cover {
-  transform: rotateY(-180deg);
+  transform: rotateY(-180deg); /* Поворот при переключении */
 }
 .reg .container #flip:checked ~ .forms .login-form {
-  pointer-events: none;
+  pointer-events: none; /* Отключение взаимодействия */
 }
 .reg .container .cover .front,
 .reg .container .cover .back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute; /* Абсолютное позиционирование */
+  top: 0; /* Сверху */
+  left: 0; /* Слева */
+  height: 100%; /* Высота 100% */
+  width: 100%; /* Ширина 100% */
+  display: flex; /* Flex-контейнер */
+  justify-content: center; /* Центрирование по горизонтали */
+  align-items: center; /* Центрирование по вертикали */
 }
 .reg .cover .back {
-  transform: rotateY(180deg);
+  transform: rotateY(180deg); /* Поворот задней стороны */
 }
 .reg .container .cover img {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  z-index: 1;
+  position: absolute; /* Абсолютное позиционирование */
+  height: 100%; /* Высота 100% */
+  width: 100%; /* Ширина 100% */
+  object-fit: cover; /* Заполнение области */
+  z-index: 1; /* Уровень наложения */
 }
 .reg .container .cover .text {
-  position: relative;
-  z-index: 10;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  position: relative; /* Относительное позиционирование */
+  z-index: 10; /* Уровень наложения */
+  height: 100%; /* Высота 100% */
+  width: 100%; /* Ширина 100% */
+  display: flex; /* Flex-контейнер */
+  flex-direction: column; /* Вертикальная ориентация */
+  align-items: center; /* Центрирование по горизонтали */
+  justify-content: center; /* Центрирование по вертикали */
+  text-align: center; /* Центрирование текста */
 }
 .reg .cover .text::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 5;
+  content: ""; /* Псевдоэлемент для затемнения */
+  position: absolute; /* Абсолютное позиционирование */
+  height: 100%; /* Высота 100% */
+  width: 100%; /* Ширина 100% */
+  background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  z-index: 5; /* Уровень наложения */
 }
 .reg .cover .text .text-1,
 .reg .cover .text .text-2 {
-  z-index: 20;
-  font-size: 26px;
-  font-weight: 600;
-  color: #fff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 20; /* Уровень наложения */
+  font-size: 26px; /* Размер шрифта */
+  font-weight: 600; /* Жирность шрифта */
+  color: #fff; /* Цвет текста */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Тень для текста */
 }
 .reg .cover .text .text-2 {
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 15px; /* Размер шрифта для дополнительного текста */
+  font-weight: 500; /* Жирность шрифта */
 }
 .reg .container .forms {
-  height: 100%;
-  width: 100%;
-  background: #fff;
+  height: 100%; /* Высота форм 100% */
+  width: 100%; /* Ширина форм 100% */
+  background: #fff; /* Фоновый цвет форм */
 }
 .reg .container .form-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex; /* Flex-контейнер */
+  align-items: center; /* Центрирование по вертикали */
+  justify-content: space-between; /* Распределение по горизонтали */
 }
 .reg .form-content .login-form,
 .reg .form-content .signup-form {
-  width: calc(50% - 25px);
+  width: calc(50% - 25px); /* Ширина форм */
 }
 .reg .forms .form-content .title {
-  position: relative;
-  font-size: 24px;
-  font-weight: 500;
-  color: #333;
+  position: relative; /* Относительное позиционирование */
+  font-size: 24px; /* Размер шрифта заголовка */
+  font-weight: 500; /* Жирность шрифта */
+  color: #333; /* Цвет заголовка */
 }
 .reg .forms .form-content .title:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 25px;
-  background: #7d2ae8;
+  content: ""; /* Псевдоэлемент для линии */
+  position: absolute; /* Абсолютное позиционирование */
+  left: 0; /* Слева */
+  bottom: 0; /* Снизу */
+  height: 3px; /* Высота линии */
+  width: 25px; /* Ширина линии */
+  background: #7d2ae8; /* Цвет линии */
 }
 .reg .forms .signup-form .title:before {
-  width: 20px;
+  width: 20px; /* Ширина линии для формы регистрации */
 }
 .reg .forms .form-content .input-boxes {
-  margin-top: 30px;
+  margin-top: 30px; /* Отступ сверху для ввода */
 }
 .reg .forms .form-content .input-box {
-  display: flex;
-  align-items: center;
-  height: 50px;
-  width: 100%;
-  margin: 10px 0;
-  position: relative;
+  display: flex; /* Flex-контейнер */
+  align-items: center; /* Центрирование по вертикали */
+  height: 50px; /* Высота поля ввода */
+  width: 100%; /* Ширина 100% */
+  margin: 10px 0; /* Отступы */
+  position: relative; /* Относительное позиционирование */
 }
 .reg .form-content .input-box input {
-  height: 100%;
-  width: 100%;
-  outline: none;
-  border: none;
-  padding: 0 30px;
-  font-size: 16px;
-  font-weight: 500;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  height: 100%; /* Высота 100% */
+  width: 100%; /* Ширина 100% */
+  outline: none; /* Убираем обводку */
+  border: none; /* Убираем рамку */
+  padding: 0 30px; /* Внутренние отступы */
+  font-size: 16px; /* Размер шрифта */
+  font-weight: 500; /* Жирность шрифта */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2); /* Нижняя рамка */
+  transition: all 0.3s ease; /* Плавный переход */
 }
 .reg .form-content .input-box input:focus,
 .reg .form-content .input-box input:valid {
-  border-color: #7d2ae8;
+  border-color: #7d2ae8; /* Цвет рамки при фокусе */
 }
 .reg .form-content .input-box i {
-  position: absolute;
-  color: #7d2ae8;
-  font-size: 17px;
+  position: absolute; /* Абсолютное позиционирование иконки */
+  color: #7d2ae8; /* Цвет иконки */
+  font-size: 17px; /* Размер иконки */
 }
 .reg .forms .form-content .text {
-  font-size: 14px;
-  font-weight: 500;
-  color: #333;
+  font-size: 14px; /* Размер шрифта для текста */
+  font-weight: 500; /* Жирность шрифта */
+  color: #333; /* Цвет текста */
 }
 .reg .forms .form-content .text a {
-  text-decoration: none;
+  text-decoration: none; /* Убираем подчеркивание */
 }
 .reg .forms .form-content .text a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Подчеркивание при наведении */
 }
 .reg .forms .form-content .button {
-  color: #fff;
-  margin-top: 40px;
+  color: #fff; /* Цвет текста кнопки */
+  margin-top: 40px; /* Отступ сверху для кнопки */
 }
 .reg .forms .form-content .button input {
-  color: #fff;
-  background: #7d2ae8;
-  border-radius: 6px;
-  padding: 0;
-  cursor: pointer;
-  transition: all 0.4s ease;
+  color: #fff; /* Цвет текста кнопки */
+  background: #7d2ae8; /* Фоновый цвет кнопки */
+  border-radius: 6px; /* Скругление углов */
+  padding: 0; /* Убираем внутренние отступы */
+  cursor: pointer; /* Курсор при наведении */
+  transition: all 0.4s ease; /* Плавный переход */
 }
 .reg .forms .form-content .button input:hover {
-  background: #5b13b9;
+  background: #5b13b9; /* Цвет кнопки при наведении */
 }
 .reg .forms .form-content label {
-  color: #5b13b9;
-  cursor: pointer;
+  color: #5b13b9; /* Цвет метки */
+  cursor: pointer; /* Курсор при наведении */
 }
 .reg .forms .form-content label:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Подчеркивание при наведении */
 }
 .reg .forms .form-content .login-text,
 .reg .forms .form-content .sign-up-text {
-  text-align: center;
-  margin-top: 25px;
+  text-align: center; /* Центрирование текста */
+  margin-top: 25px; /* Отступ сверху */
 }
 .reg .container #flip {
-  display: none;
+  display: none; /* Скрываем переключатель */
 }
 @media (max-width: 730px) {
   .reg .container .cover {
-    display: none;
+    display: none; /* Скрываем накладку на мобильных устройствах */
   }
   .reg .form-content .login-form,
   .reg .form-content .signup-form {
-    width: 100%;
+    width: 100%; /* Ширина форм 100% */
   }
   .reg .form-content .signup-form {
-    display: none;
+    display: none; /* Скрываем форму регистрации */
   }
   .reg .container #flip:checked ~ .forms .signup-form {
-    display: block;
+    display: block; /* Показываем форму регистрации при переключении */
   }
   .reg .container #flip:checked ~ .forms .login-form {
-    display: none;
+    display: none; /* Скрываем форму входа при переключении */
   }
 }
 
 .catalog .card {
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: none;
-  border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.2s; /* Плавный переход для трансформации и тени */
+  border: none; /* Убираем рамку у карточки */
+  border-radius: 10px; /* Закругление углов карточки */
 }
 .catalog .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05); /* Увеличение карточки при наведении */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Тень при наведении */
 }
 .catalog .card .price {
-  font-weight: bold;
-  color: #28a745;
-  font-size: 1.25rem;
+  font-weight: bold; /* Жирный шрифт для цены */
+  color: #28a745; /* Цвет текста для цены */
+  font-size: 1.25rem; /* Размер шрифта для цены */
 }
 .catalog .card .rating {
-  margin-top: 10px;
+  margin-top: 10px; /* Отступ сверху для рейтинга */
 }
 .catalog .card ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+  margin: 0; /* Убираем отступы для списка */
+  padding: 0; /* Убираем внутренние отступы для списка */
+  list-style: none; /* Убираем маркеры у списка */
 }
 .catalog .card ul li {
-  margin: 5px 0;
+  margin: 5px 0; /* Отступы для пунктов списка */
 }
 .catalog .card ul li i {
-  color: #007bff;
-  margin-right: 5px;
+  color: #007bff; /* Цвет иконок в списке */
+  margin-right: 5px; /* Отступ справа для иконок */
 }
 .catalog .card-img-top {
-  height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 200px; /* Высота изображения карточки */
+  object-fit: cover; /* Обеспечиваем обрезку изображения по размеру карточки */
 }
 .catalog h1 {
-  font-family: "Titillium Web", sans-serif;
-  font-weight: 600;
-  color: #343a40;
+  font-family: "Titillium Web", sans-serif; /* Шрифт для заголовка */
+  font-weight: 600; /* Жирность шрифта для заголовка */
+  color: #343a40; /* Цвет текста для заголовка */
 }
 .catalog .btn-primary {
-  background-color: #007bff;
-  border: none;
+  background-color: #007bff; /* Цвет фона для основной кнопки */
+  border: none; /* Убираем рамку у кнопки */
 }
 .catalog .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #0056b3; /* Цвет фона при наведении на основную кнопку */
 }
 .catalog .btn-outline-secondary {
-  color: #007bff;
-  border-color: #007bff;
+  color: #007bff; /* Цвет текста для вторичной кнопки */
+  border-color: #007bff; /* Цвет рамки для вторичной кнопки */
 }
 .catalog .btn-outline-secondary:hover {
-  background-color: #007bff;
-  color: white;
+  background-color: #007bff; /* Цвет фона при наведении на вторичную кнопку */
+  color: white; /* Цвет текста при наведении на вторичную кнопку */
 }
 
 .admin .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 20px;
+  max-width: 1200px; /* Максимальная ширина контейнера */
+  margin: auto; /* Центрирование контейнера */
+  padding: 20px; /* Внутренние отступы для контейнера */
 }
 .admin .card {
-  background-color: #ffffff;
-  border: none;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  background-color: #fff; /* Цвет фона карточки */
+  border: none; /* Убираем рамку у карточки */
+  border-radius: 5px; /* Закругление углов карточки */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для карточки */
+  transition: box-shadow 0.3s ease; /* Плавный переход для тени при наведении */
 }
 .admin .card:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Увеличение тени при наведении */
 }
 .admin .card .card-img-top {
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  border-top-left-radius: 5px; /* Закругление верхнего левого угла изображения */
+  border-top-right-radius: 5px; /* Закругление верхнего правого угла изображения */
+  height: 200px; /* Высота изображения карточки */
+  object-fit: cover; /* Обеспечиваем обрезку изображения по размеру карточки */
 }
 .admin .card .card-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  padding: 15px;
+  display: flex; /* Используем Flexbox для расположения элементов */
+  flex-direction: column; /* Расположение элементов в колонку */
+  justify-content: space-between; /* Распределение пространства между элементами */
+  height: 100%; /* Высота карточки */
+  padding: 15px; /* Внутренние отступы для содержимого карточки */
 }
 .admin .card .card-body .card-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 1.25rem; /* Размер шрифта для заголовка карточки */
+  font-weight: bold; /* Жирность шрифта для заголовка карточки */
+  margin-bottom: 10px; /* Отступ снизу для заголовка карточки */
 }
 .admin .card .card-body .card-text {
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-  color: #555;
+  font-size: 0.9rem; /* Размер шрифта для текста карточки */
+  margin-bottom: 15px; /* Отступ снизу для текста карточки */
+  color: #555; /* Цвет текста карточки */
 }
 .admin .card .card-body .price {
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #007bff;
-  margin-bottom: 10px;
+  font-size: 1.1rem; /* Размер шрифта для цены */
+  font-weight: bold; /* Жирность шрифта для цены */
+  color: #007bff; /* Цвет текста для цены */
+  margin-bottom: 10px; /* Отступ снизу для цены */
 }
 .admin .card .card-body .rating {
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* Отступ снизу для рейтинга */
 }
 .admin .card .card-body .buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: auto;
+  display: flex; /* Используем Flexbox для расположения кнопок */
+  justify-content: space-between; /* Распределение кнопок по краям */
+  margin-top: auto; /* Автоматический отступ сверху для кнопок */
 }
 .admin .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* Отступ снизу для группы форм */
 }
 .admin .form-group label {
-  font-weight: bold;
+  font-weight: bold; /* Жирность шрифта для меток */
 }
 .admin .form-group input, .admin .form-group textarea {
-  border-radius: 0.5rem;
-  border: 1px solid #ccc;
+  border-radius: 5px; /* Закругление углов для полей ввода */
+  border: 1px solid #ccc; /* Рамка для полей ввода */
 }
 .admin .form-group input:focus, .admin .form-group textarea:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px #007bff;
+  border-color: #007bff; /* Цвет рамки при фокусе */
+  box-shadow: 0 0 5px #007bff; /* Тень при фокусе */
 }
 .admin h1, .admin h5 {
-  text-align: center;
+  text-align: center; /* Центрирование заголовков */
 }
 
 .number_withdrawal .cart-items .card {
-  border: 1px solid #e0e0e0;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+  border: 1px solid #e0e0e0; /* Светло-серая рамка для карточки */
+  border-radius: 10px; /* Скругление углов карточки */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Легкая тень для карточки */
+  transition: box-shadow 0.3s ease; /* Плавный переход для тени при наведении */
 }
 .number_withdrawal .cart-items .card:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Увеличение тени при наведении */
 }
 .number_withdrawal .cart-items .btn-danger {
-  background-color: #dc3545;
-  border: none;
+  background-color: #dc3545; /* Красный цвет фона для кнопки "удалить" */
+  border: none; /* Убираем рамку у кнопки */
 }
 .number_withdrawal .cart-items .btn-danger:hover {
-  background-color: #c82333;
+  background-color: #c82333; /* Темно-красный цвет фона при наведении */
 }
 .number_withdrawal .cart-items .btn-primary {
-  background-color: #007bff;
-  border: none;
+  background-color: #007bff; /* Синий цвет фона для основной кнопки */
+  border: none; /* Убираем рамку у кнопки */
 }
 .number_withdrawal .cart-items .btn-primary:hover {
-  background-color: #0069d9;
+  background-color: #0069d9; /* Темно-синий цвет фона при наведении */
 }
 
 * {
